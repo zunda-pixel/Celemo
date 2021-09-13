@@ -140,7 +140,6 @@
 				2E51FA4726EF7D3E00079CFA /* ViewModel */,
 				2E51FA4626EF7D3400079CFA /* Model */,
 				2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */,
-				2E51FA1E26EF7B0000079CFA /* TabView.swift */,
 				2E51FA2026EF7B0200079CFA /* Assets.xcassets */,
 				2E51FA2226EF7B0200079CFA /* Preview Content */,
 			);
@@ -198,6 +197,7 @@
 				2E51FA4926EF7DD400079CFA /* Appliances */,
 				2E51FA7026EF808B00079CFA /* HomeView.swift */,
 				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
+				2E51FA1E26EF7B0000079CFA /* TabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
