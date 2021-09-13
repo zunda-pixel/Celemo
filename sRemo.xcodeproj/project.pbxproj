@@ -8,12 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		2E51FA1D26EF7B0000079CFA /* sRemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */; };
-		2E51FA1F26EF7B0000079CFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1E26EF7B0000079CFA /* ContentView.swift */; };
+		2E51FA1F26EF7B0000079CFA /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1E26EF7B0000079CFA /* TabView.swift */; };
 		2E51FA2126EF7B0200079CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2026EF7B0200079CFA /* Assets.xcassets */; };
 		2E51FA2426EF7B0200079CFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */; };
 		2E51FA2E26EF7B0200079CFA /* sRemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA2D26EF7B0200079CFA /* sRemoTests.swift */; };
 		2E51FA3826EF7B0200079CFA /* sRemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA3726EF7B0200079CFA /* sRemoUITests.swift */; };
 		2E51FA3A26EF7B0200079CFA /* sRemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA3926EF7B0200079CFA /* sRemoUITestsLaunchTests.swift */; };
+		2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4A26EF7DEB00079CFA /* TVView.swift */; };
+		2E51FA4D26EF7E1100079CFA /* AirConditioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4C26EF7E1100079CFA /* AirConditioner.swift */; };
+		2E51FA4F26EF7E2000079CFA /* DVDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4E26EF7E2000079CFA /* DVDView.swift */; };
+		2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5026EF7E4300079CFA /* LightView.swift */; };
+		2E51FA5326EF7E5000079CFA /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5226EF7E5000079CFA /* SwitchView.swift */; };
+		2E51FA5626EF7E8D00079CFA /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5526EF7E8D00079CFA /* TVModel.swift */; };
+		2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */; };
+		2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5A26EF7EE300079CFA /* DVDModel.swift */; };
+		2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5C26EF7EED00079CFA /* LightModel.swift */; };
+		2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */; };
+		2E51FA6326EF802A00079CFA /* TVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6226EF802A00079CFA /* TVViewModel.swift */; };
+		2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */; };
+		2E51FA6726EF804300079CFA /* DVDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6626EF804300079CFA /* DVDViewModel.swift */; };
+		2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6826EF805200079CFA /* LightViewModel.swift */; };
+		2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */; };
+		2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6C26EF807400079CFA /* HomeModel.swift */; };
+		2E51FA6F26EF808300079CFA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6E26EF808300079CFA /* HomeViewModel.swift */; };
+		2E51FA7126EF808B00079CFA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7026EF808B00079CFA /* HomeView.swift */; };
+		2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7226EF809E00079CFA /* SettingsView.swift */; };
+		2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */; };
+		2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7626EF80E400079CFA /* SettingsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +57,7 @@
 /* Begin PBXFileReference section */
 		2E51FA1926EF7B0000079CFA /* sRemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sRemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoApp.swift; sourceTree = "<group>"; };
-		2E51FA1E26EF7B0000079CFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E51FA1E26EF7B0000079CFA /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		2E51FA2026EF7B0200079CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E51FA2926EF7B0200079CFA /* sRemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sRemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +65,27 @@
 		2E51FA3326EF7B0200079CFA /* sRemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sRemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E51FA3726EF7B0200079CFA /* sRemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoUITests.swift; sourceTree = "<group>"; };
 		2E51FA3926EF7B0200079CFA /* sRemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E51FA4A26EF7DEB00079CFA /* TVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVView.swift; sourceTree = "<group>"; };
+		2E51FA4C26EF7E1100079CFA /* AirConditioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditioner.swift; sourceTree = "<group>"; };
+		2E51FA4E26EF7E2000079CFA /* DVDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDView.swift; sourceTree = "<group>"; };
+		2E51FA5026EF7E4300079CFA /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		2E51FA5226EF7E5000079CFA /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		2E51FA5526EF7E8D00079CFA /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
+		2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditionerModel.swift; sourceTree = "<group>"; };
+		2E51FA5A26EF7EE300079CFA /* DVDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDModel.swift; sourceTree = "<group>"; };
+		2E51FA5C26EF7EED00079CFA /* LightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightModel.swift; sourceTree = "<group>"; };
+		2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchModel.swift; sourceTree = "<group>"; };
+		2E51FA6226EF802A00079CFA /* TVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditionerViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6626EF804300079CFA /* DVDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6826EF805200079CFA /* LightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6C26EF807400079CFA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		2E51FA6E26EF808300079CFA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2E51FA7026EF808B00079CFA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2E51FA7226EF809E00079CFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2E51FA7626EF80E400079CFA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +136,11 @@
 		2E51FA1B26EF7B0000079CFA /* sRemo */ = {
 			isa = PBXGroup;
 			children = (
+				2E51FA4826EF7D4E00079CFA /* View */,
+				2E51FA4726EF7D3E00079CFA /* ViewModel */,
+				2E51FA4626EF7D3400079CFA /* Model */,
 				2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */,
-				2E51FA1E26EF7B0000079CFA /* ContentView.swift */,
+				2E51FA1E26EF7B0000079CFA /* TabView.swift */,
 				2E51FA2026EF7B0200079CFA /* Assets.xcassets */,
 				2E51FA2226EF7B0200079CFA /* Preview Content */,
 			);
@@ -125,6 +170,72 @@
 				2E51FA3926EF7B0200079CFA /* sRemoUITestsLaunchTests.swift */,
 			);
 			path = sRemoUITests;
+			sourceTree = "<group>";
+		};
+		2E51FA4626EF7D3400079CFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA5726EF7E9100079CFA /* Appliances */,
+				2E51FA6C26EF807400079CFA /* HomeModel.swift */,
+				2E51FA7626EF80E400079CFA /* SettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E51FA4726EF7D3E00079CFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA6126EF800100079CFA /* Appliances */,
+				2E51FA6E26EF808300079CFA /* HomeViewModel.swift */,
+				2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E51FA4826EF7D4E00079CFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA4926EF7DD400079CFA /* Appliances */,
+				2E51FA7026EF808B00079CFA /* HomeView.swift */,
+				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E51FA4926EF7DD400079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA4A26EF7DEB00079CFA /* TVView.swift */,
+				2E51FA4C26EF7E1100079CFA /* AirConditioner.swift */,
+				2E51FA4E26EF7E2000079CFA /* DVDView.swift */,
+				2E51FA5026EF7E4300079CFA /* LightView.swift */,
+				2E51FA5226EF7E5000079CFA /* SwitchView.swift */,
+			);
+			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA5726EF7E9100079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA5526EF7E8D00079CFA /* TVModel.swift */,
+				2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */,
+				2E51FA5A26EF7EE300079CFA /* DVDModel.swift */,
+				2E51FA5C26EF7EED00079CFA /* LightModel.swift */,
+				2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */,
+			);
+			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA6126EF800100079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA6226EF802A00079CFA /* TVViewModel.swift */,
+				2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */,
+				2E51FA6626EF804300079CFA /* DVDViewModel.swift */,
+				2E51FA6826EF805200079CFA /* LightViewModel.swift */,
+				2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */,
+			);
+			path = Appliances;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +368,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E51FA1F26EF7B0000079CFA /* ContentView.swift in Sources */,
+				2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */,
+				2E51FA6F26EF808300079CFA /* HomeViewModel.swift in Sources */,
+				2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */,
+				2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */,
+				2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */,
+				2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */,
+				2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */,
+				2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */,
+				2E51FA4D26EF7E1100079CFA /* AirConditioner.swift in Sources */,
+				2E51FA5626EF7E8D00079CFA /* TVModel.swift in Sources */,
+				2E51FA6726EF804300079CFA /* DVDViewModel.swift in Sources */,
+				2E51FA5326EF7E5000079CFA /* SwitchView.swift in Sources */,
+				2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */,
+				2E51FA6326EF802A00079CFA /* TVViewModel.swift in Sources */,
+				2E51FA4F26EF7E2000079CFA /* DVDView.swift in Sources */,
+				2E51FA7126EF808B00079CFA /* HomeView.swift in Sources */,
+				2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */,
+				2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */,
+				2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */,
+				2E51FA1F26EF7B0000079CFA /* TabView.swift in Sources */,
+				2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */,
+				2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */,
 				2E51FA1D26EF7B0000079CFA /* sRemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
