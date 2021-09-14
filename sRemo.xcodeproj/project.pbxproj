@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E51FA1D26EF7B0000079CFA /* sRemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */; };
-		2E51FA1F26EF7B0000079CFA /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1E26EF7B0000079CFA /* TabView.swift */; };
+		2E51FA1F26EF7B0000079CFA /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */; };
 		2E51FA2126EF7B0200079CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2026EF7B0200079CFA /* Assets.xcassets */; };
 		2E51FA2426EF7B0200079CFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */; };
 		2E51FA2E26EF7B0200079CFA /* sRemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA2D26EF7B0200079CFA /* sRemoTests.swift */; };
@@ -35,6 +35,7 @@
 		2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7226EF809E00079CFA /* SettingsView.swift */; };
 		2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */; };
 		2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7626EF80E400079CFA /* SettingsModel.swift */; };
+		2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7826EF842200079CFA /* DeviceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 /* Begin PBXFileReference section */
 		2E51FA1926EF7B0000079CFA /* sRemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sRemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E51FA1C26EF7B0000079CFA /* sRemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoApp.swift; sourceTree = "<group>"; };
-		2E51FA1E26EF7B0000079CFA /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		2E51FA2026EF7B0200079CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E51FA2926EF7B0200079CFA /* sRemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sRemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +87,7 @@
 		2E51FA7226EF809E00079CFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2E51FA7626EF80E400079CFA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		2E51FA7826EF842200079CFA /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				2E51FA5726EF7E9100079CFA /* Appliances */,
 				2E51FA6C26EF807400079CFA /* HomeModel.swift */,
 				2E51FA7626EF80E400079CFA /* SettingsModel.swift */,
+				2E51FA7826EF842200079CFA /* DeviceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 				2E51FA4926EF7DD400079CFA /* Appliances */,
 				2E51FA7026EF808B00079CFA /* HomeView.swift */,
 				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
-				2E51FA1E26EF7B0000079CFA /* TabView.swift */,
+				2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */,
 				2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */,
 				2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */,
+				2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */,
 				2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */,
 				2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */,
 				2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */,
@@ -387,7 +391,7 @@
 				2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */,
 				2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */,
 				2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */,
-				2E51FA1F26EF7B0000079CFA /* TabView.swift in Sources */,
+				2E51FA1F26EF7B0000079CFA /* HomeTabView.swift in Sources */,
 				2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */,
 				2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */,
 				2E51FA1D26EF7B0000079CFA /* sRemoApp.swift in Sources */,
@@ -558,7 +562,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,7 +591,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
