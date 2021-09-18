@@ -7,14 +7,9 @@
 
 import Foundation
 
-class SettingsModel: ObservableObject {
-    @Published var registrationName : String = ""
-    @Published var registrationDeviceID : String = ""
-    @Published var registrationApiKey : String = ""
-    
-    @Published var savedDevices : [DeviceModel]
-    
-    init(savedDevices: [DeviceModel]) {
-        self.savedDevices = savedDevices
-    }
+struct SettingsModel {
+    var registrationName : String = ""
+    var registrationDeviceID : String = ""
+    var registrationApiKey : String = ""
+    var savedDevices : [DeviceModel] = []
 }

@@ -36,6 +36,12 @@
 		2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */; };
 		2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7626EF80E400079CFA /* SettingsModel.swift */; };
 		2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7826EF842200079CFA /* DeviceModel.swift */; };
+		2E51FA7F26F2306600079CFA /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */; };
+		2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA8026F2331F00079CFA /* HTTPClient.swift */; };
+		2EE7C19126F4C6BE00D1A886 /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */; };
+		2EE7C19326F4D34C00D1A886 /* HalfModalSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19226F4D34C00D1A886 /* HalfModalSheet.swift */; };
+		2EE7C19526F5CF0700D1A886 /* sRemoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */; };
+		2EE7C19826F5DEF400D1A886 /* SettingsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,12 @@
 		2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2E51FA7626EF80E400079CFA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		2E51FA7826EF842200079CFA /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
+		2E51FA8026F2331F00079CFA /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
+		2EE7C19226F4D34C00D1A886 /* HalfModalSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheet.swift; sourceTree = "<group>"; };
+		2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoAPIClient.swift; sourceTree = "<group>"; };
+		2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +150,7 @@
 		2E51FA1B26EF7B0000079CFA /* sRemo */ = {
 			isa = PBXGroup;
 			children = (
+				2E51FA7C26F2303400079CFA /* API */,
 				2E51FA4826EF7D4E00079CFA /* View */,
 				2E51FA4726EF7D3E00079CFA /* ViewModel */,
 				2E51FA4626EF7D3400079CFA /* Model */,
@@ -187,9 +200,9 @@
 		2E51FA4726EF7D3E00079CFA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2EE7C19626F5DEDE00D1A886 /* Settings */,
 				2E51FA6126EF800100079CFA /* Appliances */,
 				2E51FA6E26EF808300079CFA /* HomeViewModel.swift */,
-				2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,10 +210,11 @@
 		2E51FA4826EF7D4E00079CFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2EE7C18F26F4C6A200D1A886 /* Settings */,
 				2E51FA4926EF7DD400079CFA /* Appliances */,
 				2E51FA7026EF808B00079CFA /* HomeView.swift */,
-				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
 				2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */,
+				2EE7C19226F4D34C00D1A886 /* HalfModalSheet.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +253,34 @@
 				2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */,
 			);
 			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA7C26F2303400079CFA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */,
+				2E51FA8026F2331F00079CFA /* HTTPClient.swift */,
+				2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2EE7C18F26F4C6A200D1A886 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
+				2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2EE7C19626F5DEDE00D1A886 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */,
+				2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,12 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE7C19326F4D34C00D1A886 /* HalfModalSheet.swift in Sources */,
 				2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */,
 				2E51FA6F26EF808300079CFA /* HomeViewModel.swift in Sources */,
+				2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */,
 				2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */,
 				2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */,
 				2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */,
 				2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */,
+				2E51FA7F26F2306600079CFA /* UserDefaultWrapper.swift in Sources */,
 				2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */,
 				2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */,
 				2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */,
@@ -390,7 +435,10 @@
 				2E51FA7126EF808B00079CFA /* HomeView.swift in Sources */,
 				2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */,
 				2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */,
+				2EE7C19826F5DEF400D1A886 /* SettingsDetailViewModel.swift in Sources */,
 				2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */,
+				2EE7C19126F4C6BE00D1A886 /* SettingsDetailView.swift in Sources */,
+				2EE7C19526F5CF0700D1A886 /* sRemoAPIClient.swift in Sources */,
 				2E51FA1F26EF7B0000079CFA /* HomeTabView.swift in Sources */,
 				2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */,
 				2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */,

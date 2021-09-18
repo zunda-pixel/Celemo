@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @StateObject var settingsViewModel: SettingsViewModel = SettingsViewModel()
+    @State var isPresentedSettingDetailView: Bool = false
     
     var body: some View {
         List {
@@ -18,7 +19,7 @@ struct SettingsView: View {
                     Text("名前")
                     Spacer()
                 }){
-                    TextField("名前", text: $settingsViewModel.settingsModel.registrationName)
+                TextField("名前", text: $settingsViewModel.settingsModel.registrationName)
             }
             
             Section(header:
@@ -26,10 +27,7 @@ struct SettingsView: View {
                     Image(systemName: "person.fill")
                     Text("デバイス識別子")
                     Spacer()
-                    Button(action: {
-                        
-                        
-                    }, label: {
+                    Link(destination: URL(string: "https://sremo.biz/sremor_home")!, label: {
                         Image(systemName: "questionmark.circle")
                     })
                 }){
@@ -41,9 +39,7 @@ struct SettingsView: View {
                     Image(systemName: "person.fill")
                     Text("APIアクセストークン")
                     Spacer()
-                    Button(action: {
-                        
-                    }, label: {
+                    Link(destination: URL(string: "https://sremo.biz/sremor_home")!, label: {
                         Image(systemName: "questionmark.circle")
                     })
                 }){
@@ -57,14 +53,40 @@ struct SettingsView: View {
                     Text("追加")
                 })
             }
+            .onAppear(perform: {
+                settingsViewModel.loadDevices()
+            })
             
             Section {
-                ForEach(settingsViewModel.settingsModel.savedDevices) { savedDevice in
-                    Text(savedDevice.name)
+                ForEach(0..<settingsViewModel.settingsModel.savedDevices.count, id: \.self) { index in
+                    let deviceModel = settingsViewModel.settingsModel.savedDevices[index]
+                    
+                    Button(action: {
+                        self.isPresentedSettingDetailView.toggle()
+                    }, label: {
+                        HStack {
+                            Text(deviceModel.name)
+                            Spacer()
+                        }
+                    })
+                    
+                    .halfModal(isShow: $isPresentedSettingDetailView) {
+                        SettingsDetailView(deviceModel: deviceModel)
+                    } onEnd: {
+                      print("Dismiss half modal")
+                    }
                 }
+                .onDelete(perform: self.settingsViewModel.removeDeviceModelAt)
             }
         }
         .listStyle(GroupedListStyle())
+        .alert("エラー", isPresented: self.$settingsViewModel.happenedError, actions: {
+            
+        }, message: {
+            HStack {
+                Text(self.settingsViewModel.errorMessage)
+            }
+        })
     }
 }
 
@@ -73,4 +95,3 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
-
