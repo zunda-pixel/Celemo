@@ -7,21 +7,27 @@
 
 import Foundation
 
-class SettingsDetailViewModel: ObservableObject {
-    static func getDate(deviceModel: DeviceModel) async -> String {
-        let result = await sRemoAPIClient.getDate(deviceModel: deviceModel)
-        
-        switch result {
-            case .success(let data):
-                do {
-                    let dateTimeModel = try JSONDecoder().decode(DateTimeModel.self, from: data)
-                    return "成功(\(dateTimeModel.date))"
-                } catch {
-                    return "失敗しました"
-                }
-            case .failure:
-                return "失敗しました"
+actor SettingsDetailViewModel: ObservableObject {
+    @MainActor @Published var message: String
+    
+    @MainActor init() {
+        message = ""
+    }
+    
+    @MainActor func testAPI(_ deviceModel: DeviceModel) async {
+        message = "テスト中です"
+        do {
+            let date = try await sRemoAPIClient.getDate(deviceModel)
+            
+            let formatter = DateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("yyyyMMddHHmmss")
+            let dateString = formatter.string(from: date)
+            
+            message = "成功(\(dateString))"
+        } catch {
+            message = "失敗"
         }
+        
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsDetailView: View {
-    @State var date: String = ""
+    @StateObject var viewModel: SettingsDetailViewModel = SettingsDetailViewModel()
     
     let deviceModel: DeviceModel
     
@@ -33,14 +33,13 @@ struct SettingsDetailView: View {
             }
             Button(action: {
                 Task {
-                    self.date = "テスト中..."
-                    self.date = await SettingsDetailViewModel.getDate(deviceModel: deviceModel)
+                    await viewModel.testAPI(self.deviceModel)
                 }
             }, label: {
                 HStack {
                     Text("接続テスト")
                     Spacer()
-                    Text(date)
+                    Text(viewModel.message)
                 }
             })
         }

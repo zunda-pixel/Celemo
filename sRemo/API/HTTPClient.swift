@@ -21,9 +21,9 @@ private enum HTTPMethod : String {
 }
 
 struct HTTPClient {
-    public static func get(url urlString: String, headers: [String: String] = [:], queries: [String: String] = [:]) async -> Result<Data, HTTPError> {
+    public static func get(url urlString: String, headers: [String: String] = [:], queries: [String: String] = [:]) async throws -> Data {
         guard var urlComponents = URLComponents(string: urlString) else {
-            return .failure(.InvalidURL)
+            throw HTTPError.InvalidURL
         }
         
         var queryItems: [URLQueryItem] = []
@@ -47,22 +47,22 @@ struct HTTPClient {
             let (data, urlResponse) =  try await URLSession.shared.data(for: request)
                         
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
-                return .failure(.UnknownError)
+                throw HTTPError.UnknownError
             }
                         
             if (200..<300).contains(httpResponse.statusCode) {
-                return .success(data)
+                return data
             } else {
-                return .failure(.ErrorResponse)
+                throw HTTPError.ErrorResponse
             }
         } catch let error {
-            return .failure(.ConnectionError(error))
+            throw HTTPError.ConnectionError(error)
         }
     }
     
-    public static func post(url urlString: String, headers: [String: String] = [:], queries: [String: String] = [:]) async -> HTTPError {
+    public static func post(url urlString: String, headers: [String: String] = [:], queries: [String: String] = [:]) async throws {
         guard var urlComponents = URLComponents(string: urlString) else {
-            return .InvalidURL
+            throw HTTPError.InvalidURL
         }
         
         var queryItems: [URLQueryItem] = []
@@ -86,16 +86,16 @@ struct HTTPClient {
             let (_, urlResponse) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = urlResponse as? HTTPURLResponse else {
-                return .UnknownError
+                throw HTTPError.UnknownError
             }
                         
             if (200..<300).contains(httpResponse.statusCode) {
-                return .NoError
+                throw HTTPError.NoError
             } else {
-                return .ErrorResponse
+                throw HTTPError.ErrorResponse
             }
         } catch let error {
-            return .ConnectionError(error)
+            throw HTTPError.ConnectionError(error)
         }
     }
 }
