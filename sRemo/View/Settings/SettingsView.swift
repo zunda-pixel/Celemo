@@ -69,11 +69,8 @@ struct SettingsView: View {
                             Spacer()
                         }
                     })
-                    
-                    .halfModal(isShow: $isPresentedSettingDetailView) {
+                    .sheet(isPresented: $isPresentedSettingDetailView) {
                         SettingsDetailView(deviceModel: deviceModel)
-                    } onEnd: {
-                      print("Dismiss half modal")
                     }
                 }
                 .onDelete(perform: self.settingsViewModel.removeDeviceModelAt)

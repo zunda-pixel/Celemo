@@ -8,7 +8,7 @@
 import Foundation
 
 class SettingsDetailViewModel: ObservableObject {
-    static func getDate(deviceModel: DeviceModel) async -> String{
+    static func getDate(deviceModel: DeviceModel) async -> String {
         let result = await sRemoAPIClient.getDate(deviceModel: deviceModel)
         
         switch result {

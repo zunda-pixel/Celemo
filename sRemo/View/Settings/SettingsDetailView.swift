@@ -33,6 +33,7 @@ struct SettingsDetailView: View {
             }
             Button(action: {
                 Task {
+                    self.date = "テスト中..."
                     self.date = await SettingsDetailViewModel.getDate(deviceModel: deviceModel)
                 }
             }, label: {
