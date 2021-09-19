@@ -8,19 +8,21 @@
 import Foundation
 
 class SettingsViewModel: ObservableObject {
-    @Published var settingsModel: SettingsModel = SettingsModel()
+    @Published var settingsModel: SettingsModel = SettingsModel(name: "", deviceID: "", apiKey: "")
     @Published var happenedError : Bool = false
+    
     var errorMessage = ""
     
     public func registerDevice() {
-        let newDeviceModel = DeviceModel(name: settingsModel.registrationName, deviceID: settingsModel.registrationDeviceID, apiKey: settingsModel.registrationApiKey)
-        let isValid = self.isValidDevice(newDeviceModel)
+        let newDevice = DeviceModel(name: settingsModel.name, deviceID: settingsModel.deviceID, apiKey: settingsModel.apiKey)
+        
+        let isValid = self.isValidDevice(newDevice)
         
         if !isValid {
             return
         }
         
-        self.settingsModel.savedDevices.append(newDeviceModel)        
+        self.settingsModel.devices.append(newDevice)
         self.saveDevices()
         self.clearRegistrationData()
     }
@@ -48,52 +50,32 @@ class SettingsViewModel: ObservableObject {
     }
     
     public func removeDeviceModelAt(offsets: IndexSet) {
-        self.settingsModel.savedDevices.remove(atOffsets: offsets)
+        self.settingsModel.devices.remove(atOffsets: offsets)
         self.saveDevices()
     }
     
     public func saveDevices() {
-        let result = UserDefaultWrapper.saveArrayOfData(key: "devicesData", self.settingsModel.savedDevices)
-        switch result {
-            case .LoadError:
-                self.happenedError.toggle()
-                self.errorMessage = "保存に失敗しました。"
-            case .NotFoundKey:
-                self.happenedError.toggle()
-                self.errorMessage = "保存に失敗しました。"
-            case .SaveError:
-                self.happenedError.toggle()
-                self.errorMessage = "保存に失敗しました。"
-            case .NoError:
-                break
+        do {
+            try UserDefaultWrapper.saveArrayOfData(key: "devicesData", self.settingsModel.devices)
+        } catch {
+            self.happenedError.toggle()
+            self.errorMessage = "保存に失敗しました。"
         }
     }
     
     public func loadDevices() {
-        let result: Result<[DeviceModel], SavingError> = UserDefaultWrapper.loadArrayOfData(key: "devicesData")
-        switch result {
-            case .success(let deviceModels):
-                self.settingsModel.savedDevices = deviceModels
-            case .failure(let error):
-                switch error {
-                    case .NoError:
-                        break
-                    case .LoadError:
-                        self.happenedError.toggle()
-                        self.errorMessage = "保存データのロードに問題がありました。"
-                    case .NotFoundKey:
-                        happenedError.toggle()
-                        self.errorMessage = "保存データのロードに問題がありました。"
-                    case .SaveError:
-                        self.happenedError.toggle()
-                        self.errorMessage = "保存データのロードに問題がありました。"
-                }
+        do {
+            let devices: [DeviceModel] = try UserDefaultWrapper.loadArrayOfData(key: "devicesData")
+            settingsModel.devices = devices
+        } catch {
+            self.happenedError.toggle()
+            self.errorMessage = "保存データのロードに問題がありました。"
         }
     }
     
     private func clearRegistrationData() {
-        self.settingsModel.registrationName = ""
-        self.settingsModel.registrationDeviceID = ""
-        self.settingsModel.registrationApiKey = ""
+        self.settingsModel.name = ""
+        self.settingsModel.deviceID = ""
+        self.settingsModel.apiKey = ""
     }
 }

@@ -8,8 +8,9 @@
 import Foundation
 
 struct SettingsModel {
-    var registrationName : String = ""
-    var registrationDeviceID : String = ""
-    var registrationApiKey : String = ""
-    var savedDevices : [DeviceModel] = []
+    var name: String
+    var deviceID: String
+    var apiKey: String
+    
+    var devices : [DeviceModel] = []
 }

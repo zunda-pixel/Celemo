@@ -7,63 +7,44 @@
 
 import Foundation
 
-enum SavingError : Error {
-    case NoError
+enum UserDefaultWrapperError : Error {
     case SaveError
     case LoadError
     case NotFoundKey
 }
 
 struct UserDefaultWrapper {
-    static func saveData<DecodeObject>(key: String, _ deviceModels: DecodeObject) -> SavingError {
-        do {
-            let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
-            UserDefaults.standard.setValue(archiveData, forKey: key)
-            return .NoError
-        } catch {
-            return .SaveError
-        }
+    static func saveData<DecodeObject>(key: String, _ deviceModels: DecodeObject) throws {
+        let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
+        UserDefaults.standard.setValue(archiveData, forKey: key)
     }
     
-    static func saveArrayOfData<DecodeObject>(key: String, _ deviceModels: [DecodeObject]) -> SavingError {
-        do {
-            let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
-            UserDefaults.standard.setValue(archiveData, forKey: key)
-            return .NoError
-        } catch {
-            return .SaveError
-        }
+    static func saveArrayOfData<DecodeObject>(key: String, _ deviceModels: [DecodeObject]) throws {
+        let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
+        UserDefaults.standard.setValue(archiveData, forKey: key)
     }
     
-    static func loadData<DecodedObject>(key: String) -> Result<DecodedObject, SavingError> where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
+    static func loadData<DecodedObject>(key: String) throws -> DecodedObject where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
         guard let storedData = UserDefaults.standard.object(forKey: key) as? Data else {
-            return .failure(.NotFoundKey)
+            throw UserDefaultWrapperError.NotFoundKey
         }
 
-        do {
-            if let secrets = try NSKeyedUnarchiver.unarchivedObject(ofClass: DecodedObject.self, from: storedData) {
-                return .success(secrets)
-            } else {
-                return .failure(.LoadError)
-            }
-        } catch {
-            return .failure(.LoadError)
+        if let data = try NSKeyedUnarchiver.unarchivedObject(ofClass: DecodedObject.self, from: storedData) {
+            return data
+        } else {
+            throw UserDefaultWrapperError.LoadError
         }
     }
     
-    static func loadArrayOfData<DecodedObject>(key: String) -> Result<[DecodedObject], SavingError> where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
+    static func loadArrayOfData<DecodedObject>(key: String) throws -> [DecodedObject] where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
         guard let storedData = UserDefaults.standard.object(forKey: key) as? Data else {
-            return .failure(.NotFoundKey)
+            throw UserDefaultWrapperError.NotFoundKey
         }
 
-        do {
-            if let secrets = try NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: DecodedObject.self, from: storedData) {
-                return .success(secrets)
-            } else {
-                return .failure(.LoadError)
-            }
-        } catch {
-            return .failure(.LoadError)
+        if let datas = try NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: DecodedObject.self, from: storedData) {
+            return datas
+        } else {
+            throw UserDefaultWrapperError.LoadError
         }
     }
 }

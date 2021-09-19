@@ -19,7 +19,7 @@ struct SettingsView: View {
                     Text("名前")
                     Spacer()
                 }){
-                TextField("名前", text: $settingsViewModel.settingsModel.registrationName)
+                    TextField("名前", text: $settingsViewModel.settingsModel.name)
             }
             
             Section(header:
@@ -31,7 +31,7 @@ struct SettingsView: View {
                         Image(systemName: "questionmark.circle")
                     })
                 }){
-                TextField("Device Identification", text: $settingsViewModel.settingsModel.registrationDeviceID)
+                    TextField("Device Identification", text: $settingsViewModel.settingsModel.deviceID)
             }
             
             Section (header:
@@ -43,7 +43,7 @@ struct SettingsView: View {
                         Image(systemName: "questionmark.circle")
                     })
                 }){
-                TextField("API Key", text: $settingsViewModel.settingsModel.registrationApiKey)
+                    TextField("API Key", text: $settingsViewModel.settingsModel.apiKey)
             }
             
             Section {
@@ -58,8 +58,8 @@ struct SettingsView: View {
             })
             
             Section {
-                ForEach(0..<settingsViewModel.settingsModel.savedDevices.count, id: \.self) { index in
-                    let deviceModel = settingsViewModel.settingsModel.savedDevices[index]
+                ForEach(0..<settingsViewModel.settingsModel.devices.count, id: \.self) { index in
+                    let deviceModel = settingsViewModel.settingsModel.devices[index]
                     
                     Button(action: {
                         self.isPresentedSettingDetailView.toggle()
