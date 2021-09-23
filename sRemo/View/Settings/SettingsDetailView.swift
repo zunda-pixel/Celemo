@@ -30,7 +30,18 @@ struct SettingsDetailView: View {
                     Spacer()
                     Text(deviceModel.apiKey)
                 }
+                
+                #if DEBUG
+                    HStack {
+                        Text("UUID")
+                        Spacer()
+                        Text(deviceModel.id)
+                    }
+                #endif
             }
+                
+            
+            
             Button(action: {
                 Task {
                     await viewModel.testAPI(self.deviceModel)

@@ -45,6 +45,14 @@ class SettingsViewModel: ObservableObject {
             self.happenedError.toggle()
             return false
         }
+
+        let foundSameNameDevice = settingsModel.devices.contains(where: { return $0.name == settingsModel.name })
+        
+        if foundSameNameDevice {
+            self.errorMessage = "同じデバイス名が既に存在します。"
+            self.happenedError.toggle()
+            return false
+        }
         
         return true
     }

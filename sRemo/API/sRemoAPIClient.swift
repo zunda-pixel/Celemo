@@ -8,11 +8,28 @@
 import Foundation
 
 struct sRemoAPIClient {
+    static let baseURL = "https://uapi1.sremo.net/user_api/"
+    
     static func getHeaders(_ apiKey: String) -> [String: String] {
         return [
             "Authorization": "Bearer \(apiKey)",
             "Content-Type": "application/json",
         ]
+    }
+    
+    static func getQueries(_ signal: String) -> [String: String] {
+        return ["sig": signal]
+    }
+    
+    static func sendSignal(signal: String, apiKey: String, deviceID: String) async throws {
+        let url = "\(baseURL)/\(deviceID)/send_sig"
+        print(url)
+        print(self.getQueries(signal))
+        try await HTTPClient.post(url: url, headers: self.getHeaders(apiKey), queries: self.getQueries(signal))
+    }
+    
+    static func post(url: String, apiKey: String, queries: [String: String] = [:]) async throws {
+        try await HTTPClient.post(url: url, headers: self.getHeaders(apiKey), queries: queries)
     }
     
     static func get(url: String, apiKey: String, queries: [String: String] = [:]) async throws -> Data {

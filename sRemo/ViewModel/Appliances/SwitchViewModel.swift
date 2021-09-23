@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class SwitchViewModel: ObservableObject {
+    var device: DeviceModel? = nil
+    var appliancesNumber: Int? = nil
+    
+    func switchPower() {
+        
+    }
+}

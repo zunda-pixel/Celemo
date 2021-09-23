@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class DVDViewModel: ObservableObject {
+    var device: DeviceModel? = nil
+    var appliancesNumber: Int? = nil
+    
+    func switchPower() {
+        
+    }
+}
