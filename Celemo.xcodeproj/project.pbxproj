@@ -1,0 +1,842 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E51FA1D26EF7B0000079CFA /* CelemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1C26EF7B0000079CFA /* CelemoApp.swift */; };
+		2E51FA1F26EF7B0000079CFA /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */; };
+		2E51FA2126EF7B0200079CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2026EF7B0200079CFA /* Assets.xcassets */; };
+		2E51FA2426EF7B0200079CFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */; };
+		2E51FA2E26EF7B0200079CFA /* sRemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA2D26EF7B0200079CFA /* sRemoTests.swift */; };
+		2E51FA3826EF7B0200079CFA /* CelemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA3726EF7B0200079CFA /* CelemeUITests.swift */; };
+		2E51FA3A26EF7B0200079CFA /* CelemeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA3926EF7B0200079CFA /* CelemeUITestsLaunchTests.swift */; };
+		2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4A26EF7DEB00079CFA /* TVView.swift */; };
+		2E51FA4D26EF7E1100079CFA /* AirConditionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4C26EF7E1100079CFA /* AirConditionerView.swift */; };
+		2E51FA4F26EF7E2000079CFA /* DVDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA4E26EF7E2000079CFA /* DVDView.swift */; };
+		2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5026EF7E4300079CFA /* LightView.swift */; };
+		2E51FA5326EF7E5000079CFA /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5226EF7E5000079CFA /* SwitchView.swift */; };
+		2E51FA5626EF7E8D00079CFA /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5526EF7E8D00079CFA /* TVModel.swift */; };
+		2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */; };
+		2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5A26EF7EE300079CFA /* DVDModel.swift */; };
+		2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5C26EF7EED00079CFA /* LightModel.swift */; };
+		2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */; };
+		2E51FA6326EF802A00079CFA /* TVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6226EF802A00079CFA /* TVViewModel.swift */; };
+		2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */; };
+		2E51FA6726EF804300079CFA /* DVDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6626EF804300079CFA /* DVDViewModel.swift */; };
+		2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6826EF805200079CFA /* LightViewModel.swift */; };
+		2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */; };
+		2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA6C26EF807400079CFA /* HomeModel.swift */; };
+		2E51FA7126EF808B00079CFA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7026EF808B00079CFA /* HomeView.swift */; };
+		2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7226EF809E00079CFA /* SettingsView.swift */; };
+		2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */; };
+		2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7626EF80E400079CFA /* SettingsModel.swift */; };
+		2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7826EF842200079CFA /* DeviceModel.swift */; };
+		2E51FA7F26F2306600079CFA /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */; };
+		2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA8026F2331F00079CFA /* HTTPClient.swift */; };
+		2E6A8EAC26FED52F00A55BCA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A8EAB26FED52F00A55BCA /* PrivacyPolicyView.swift */; };
+		2EDA66B826F836530082F8A9 /* AddingAppliancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B726F836530082F8A9 /* AddingAppliancesView.swift */; };
+		2EDA66BA26F836760082F8A9 /* AppliancesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B926F836760082F8A9 /* AppliancesType.swift */; };
+		2EDA66BC26F839010082F8A9 /* AddingAppliancesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66BB26F839010082F8A9 /* AddingAppliancesViewModel.swift */; };
+		2EDA66C026F844870082F8A9 /* AppliancesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66BF26F844870082F8A9 /* AppliancesModel.swift */; };
+		2EDA66C226F8DDAE0082F8A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66C126F8DDAE0082F8A9 /* HomeViewModel.swift */; };
+		2EDF02F526FC5F4D007CC171 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDF02F426FC5F4D007CC171 /* Signal.swift */; };
+		2EE7C19126F4C6BE00D1A886 /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */; };
+		2EE7C19526F5CF0700D1A886 /* sRemoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */; };
+		2EE7C19826F5DEF400D1A886 /* SettingsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E51FA2A26EF7B0200079CFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E51FA1126EF7B0000079CFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E51FA1826EF7B0000079CFA;
+			remoteInfo = sRemo;
+		};
+		2E51FA3426EF7B0200079CFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E51FA1126EF7B0000079CFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E51FA1826EF7B0000079CFA;
+			remoteInfo = sRemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E51FA1926EF7B0000079CFA /* Celemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E51FA1C26EF7B0000079CFA /* CelemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelemoApp.swift; sourceTree = "<group>"; };
+		2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		2E51FA2026EF7B0200079CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E51FA2926EF7B0200079CFA /* CelemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E51FA2D26EF7B0200079CFA /* sRemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoTests.swift; sourceTree = "<group>"; };
+		2E51FA3326EF7B0200079CFA /* CelemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CelemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E51FA3726EF7B0200079CFA /* CelemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelemeUITests.swift; sourceTree = "<group>"; };
+		2E51FA3926EF7B0200079CFA /* CelemeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelemeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E51FA4A26EF7DEB00079CFA /* TVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVView.swift; sourceTree = "<group>"; };
+		2E51FA4C26EF7E1100079CFA /* AirConditionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditionerView.swift; sourceTree = "<group>"; };
+		2E51FA4E26EF7E2000079CFA /* DVDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDView.swift; sourceTree = "<group>"; };
+		2E51FA5026EF7E4300079CFA /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		2E51FA5226EF7E5000079CFA /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
+		2E51FA5526EF7E8D00079CFA /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
+		2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditionerModel.swift; sourceTree = "<group>"; };
+		2E51FA5A26EF7EE300079CFA /* DVDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDModel.swift; sourceTree = "<group>"; };
+		2E51FA5C26EF7EED00079CFA /* LightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightModel.swift; sourceTree = "<group>"; };
+		2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchModel.swift; sourceTree = "<group>"; };
+		2E51FA6226EF802A00079CFA /* TVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditionerViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6626EF804300079CFA /* DVDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVDViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6826EF805200079CFA /* LightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewModel.swift; sourceTree = "<group>"; };
+		2E51FA6C26EF807400079CFA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		2E51FA7026EF808B00079CFA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2E51FA7226EF809E00079CFA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2E51FA7626EF80E400079CFA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		2E51FA7826EF842200079CFA /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
+		2E51FA8026F2331F00079CFA /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		2E6A8EAB26FED52F00A55BCA /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		2E6A8EAE26FEDB6A00A55BCA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2EDA66B726F836530082F8A9 /* AddingAppliancesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingAppliancesView.swift; sourceTree = "<group>"; };
+		2EDA66B926F836760082F8A9 /* AppliancesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesType.swift; sourceTree = "<group>"; };
+		2EDA66BB26F839010082F8A9 /* AddingAppliancesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingAppliancesViewModel.swift; sourceTree = "<group>"; };
+		2EDA66BF26F844870082F8A9 /* AppliancesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliancesModel.swift; sourceTree = "<group>"; };
+		2EDA66C126F8DDAE0082F8A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2EDF02F426FC5F4D007CC171 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
+		2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoAPIClient.swift; sourceTree = "<group>"; };
+		2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E51FA1626EF7B0000079CFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA2626EF7B0200079CFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA3026EF7B0200079CFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E51FA1026EF7B0000079CFA = {
+			isa = PBXGroup;
+			children = (
+				2E51FA1B26EF7B0000079CFA /* Celemo */,
+				2E51FA2C26EF7B0200079CFA /* CelemoTests */,
+				2E51FA3626EF7B0200079CFA /* CelemoUITests */,
+				2E51FA1A26EF7B0000079CFA /* Products */,
+				2E6A8EAD26FEDB6A00A55BCA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E51FA1A26EF7B0000079CFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA1926EF7B0000079CFA /* Celemo.app */,
+				2E51FA2926EF7B0200079CFA /* CelemoTests.xctest */,
+				2E51FA3326EF7B0200079CFA /* CelemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E51FA1B26EF7B0000079CFA /* Celemo */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7C26F2303400079CFA /* API */,
+				2E51FA4826EF7D4E00079CFA /* View */,
+				2E51FA4726EF7D3E00079CFA /* ViewModel */,
+				2E51FA4626EF7D3400079CFA /* Model */,
+				2E51FA1C26EF7B0000079CFA /* CelemoApp.swift */,
+				2E51FA2026EF7B0200079CFA /* Assets.xcassets */,
+				2E51FA2226EF7B0200079CFA /* Preview Content */,
+			);
+			path = Celemo;
+			sourceTree = "<group>";
+		};
+		2E51FA2226EF7B0200079CFA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA2326EF7B0200079CFA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2E51FA2C26EF7B0200079CFA /* CelemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA2D26EF7B0200079CFA /* sRemoTests.swift */,
+			);
+			path = CelemoTests;
+			sourceTree = "<group>";
+		};
+		2E51FA3626EF7B0200079CFA /* CelemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA3726EF7B0200079CFA /* CelemeUITests.swift */,
+				2E51FA3926EF7B0200079CFA /* CelemeUITestsLaunchTests.swift */,
+			);
+			path = CelemoUITests;
+			sourceTree = "<group>";
+		};
+		2E51FA4626EF7D3400079CFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA5726EF7E9100079CFA /* Appliances */,
+				2E51FA6C26EF807400079CFA /* HomeModel.swift */,
+				2E51FA7626EF80E400079CFA /* SettingsModel.swift */,
+				2E51FA7826EF842200079CFA /* DeviceModel.swift */,
+				2EDA66BF26F844870082F8A9 /* AppliancesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E51FA4726EF7D3E00079CFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA66BE26F8391C0082F8A9 /* Home */,
+				2EE7C19626F5DEDE00D1A886 /* Settings */,
+				2E51FA6126EF800100079CFA /* Appliances */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E51FA4826EF7D4E00079CFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EE7C1D826F72F5400D1A886 /* Home */,
+				2EE7C18F26F4C6A200D1A886 /* Settings */,
+				2E51FA4926EF7DD400079CFA /* Appliances */,
+				2E51FA1E26EF7B0000079CFA /* HomeTabView.swift */,
+				2E6A8EAB26FED52F00A55BCA /* PrivacyPolicyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E51FA4926EF7DD400079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA4A26EF7DEB00079CFA /* TVView.swift */,
+				2E51FA4C26EF7E1100079CFA /* AirConditionerView.swift */,
+				2E51FA4E26EF7E2000079CFA /* DVDView.swift */,
+				2E51FA5026EF7E4300079CFA /* LightView.swift */,
+				2E51FA5226EF7E5000079CFA /* SwitchView.swift */,
+			);
+			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA5726EF7E9100079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA5526EF7E8D00079CFA /* TVModel.swift */,
+				2E51FA5826EF7EBF00079CFA /* AirConditionerModel.swift */,
+				2E51FA5A26EF7EE300079CFA /* DVDModel.swift */,
+				2E51FA5C26EF7EED00079CFA /* LightModel.swift */,
+				2E51FA5F26EF7F0600079CFA /* SwitchModel.swift */,
+			);
+			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA6126EF800100079CFA /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA6226EF802A00079CFA /* TVViewModel.swift */,
+				2E51FA6426EF803700079CFA /* AirConditionerViewModel.swift */,
+				2E51FA6626EF804300079CFA /* DVDViewModel.swift */,
+				2E51FA6826EF805200079CFA /* LightViewModel.swift */,
+				2E51FA6A26EF805F00079CFA /* SwitchViewModel.swift */,
+			);
+			path = Appliances;
+			sourceTree = "<group>";
+		};
+		2E51FA7C26F2303400079CFA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7E26F2306600079CFA /* UserDefaultWrapper.swift */,
+				2E51FA8026F2331F00079CFA /* HTTPClient.swift */,
+				2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */,
+				2EDA66B926F836760082F8A9 /* AppliancesType.swift */,
+				2EDF02F426FC5F4D007CC171 /* Signal.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2E6A8EAD26FEDB6A00A55BCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E6A8EAE26FEDB6A00A55BCA /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EDA66BE26F8391C0082F8A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA66BB26F839010082F8A9 /* AddingAppliancesViewModel.swift */,
+				2EDA66C126F8DDAE0082F8A9 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2EE7C18F26F4C6A200D1A886 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7226EF809E00079CFA /* SettingsView.swift */,
+				2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2EE7C19626F5DEDE00D1A886 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7426EF80D900079CFA /* SettingsViewModel.swift */,
+				2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2EE7C1D826F72F5400D1A886 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2E51FA7026EF808B00079CFA /* HomeView.swift */,
+				2EDA66B726F836530082F8A9 /* AddingAppliancesView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E51FA1826EF7B0000079CFA /* Celemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E51FA3D26EF7B0200079CFA /* Build configuration list for PBXNativeTarget "Celemo" */;
+			buildPhases = (
+				2E51FA1526EF7B0000079CFA /* Sources */,
+				2E51FA1626EF7B0000079CFA /* Frameworks */,
+				2E51FA1726EF7B0000079CFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Celemo;
+			productName = sRemo;
+			productReference = 2E51FA1926EF7B0000079CFA /* Celemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2E51FA2826EF7B0200079CFA /* CelemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E51FA4026EF7B0200079CFA /* Build configuration list for PBXNativeTarget "CelemoTests" */;
+			buildPhases = (
+				2E51FA2526EF7B0200079CFA /* Sources */,
+				2E51FA2626EF7B0200079CFA /* Frameworks */,
+				2E51FA2726EF7B0200079CFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E51FA2B26EF7B0200079CFA /* PBXTargetDependency */,
+			);
+			name = CelemoTests;
+			productName = sRemoTests;
+			productReference = 2E51FA2926EF7B0200079CFA /* CelemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2E51FA3226EF7B0200079CFA /* CelemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E51FA4326EF7B0200079CFA /* Build configuration list for PBXNativeTarget "CelemoUITests" */;
+			buildPhases = (
+				2E51FA2F26EF7B0200079CFA /* Sources */,
+				2E51FA3026EF7B0200079CFA /* Frameworks */,
+				2E51FA3126EF7B0200079CFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E51FA3526EF7B0200079CFA /* PBXTargetDependency */,
+			);
+			name = CelemoUITests;
+			productName = sRemoUITests;
+			productReference = 2E51FA3326EF7B0200079CFA /* CelemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E51FA1126EF7B0000079CFA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					2E51FA1826EF7B0000079CFA = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					2E51FA2826EF7B0200079CFA = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 2E51FA1826EF7B0000079CFA;
+					};
+					2E51FA3226EF7B0200079CFA = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 2E51FA1826EF7B0000079CFA;
+					};
+				};
+			};
+			buildConfigurationList = 2E51FA1426EF7B0000079CFA /* Build configuration list for PBXProject "Celemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E51FA1026EF7B0000079CFA;
+			productRefGroup = 2E51FA1A26EF7B0000079CFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E51FA1826EF7B0000079CFA /* Celemo */,
+				2E51FA2826EF7B0200079CFA /* CelemoTests */,
+				2E51FA3226EF7B0200079CFA /* CelemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E51FA1726EF7B0000079CFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E51FA2426EF7B0200079CFA /* Preview Assets.xcassets in Resources */,
+				2E51FA2126EF7B0200079CFA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA2726EF7B0200079CFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA3126EF7B0200079CFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E51FA1526EF7B0000079CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */,
+				2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */,
+				2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */,
+				2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */,
+				2EDA66B826F836530082F8A9 /* AddingAppliancesView.swift in Sources */,
+				2E51FA6D26EF807400079CFA /* HomeModel.swift in Sources */,
+				2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */,
+				2E51FA7F26F2306600079CFA /* UserDefaultWrapper.swift in Sources */,
+				2E51FA5126EF7E4300079CFA /* LightView.swift in Sources */,
+				2E51FA5926EF7EBF00079CFA /* AirConditionerModel.swift in Sources */,
+				2EDA66C026F844870082F8A9 /* AppliancesModel.swift in Sources */,
+				2E51FA6926EF805200079CFA /* LightViewModel.swift in Sources */,
+				2E51FA4D26EF7E1100079CFA /* AirConditionerView.swift in Sources */,
+				2EDF02F526FC5F4D007CC171 /* Signal.swift in Sources */,
+				2EDA66BC26F839010082F8A9 /* AddingAppliancesViewModel.swift in Sources */,
+				2E51FA5626EF7E8D00079CFA /* TVModel.swift in Sources */,
+				2E51FA6726EF804300079CFA /* DVDViewModel.swift in Sources */,
+				2EDA66C226F8DDAE0082F8A9 /* HomeViewModel.swift in Sources */,
+				2E51FA5326EF7E5000079CFA /* SwitchView.swift in Sources */,
+				2E51FA7726EF80E400079CFA /* SettingsModel.swift in Sources */,
+				2E51FA6326EF802A00079CFA /* TVViewModel.swift in Sources */,
+				2E51FA4F26EF7E2000079CFA /* DVDView.swift in Sources */,
+				2E51FA7126EF808B00079CFA /* HomeView.swift in Sources */,
+				2E51FA5D26EF7EED00079CFA /* LightModel.swift in Sources */,
+				2E51FA6026EF7F0600079CFA /* SwitchModel.swift in Sources */,
+				2EE7C19826F5DEF400D1A886 /* SettingsDetailViewModel.swift in Sources */,
+				2E51FA6526EF803700079CFA /* AirConditionerViewModel.swift in Sources */,
+				2EE7C19126F4C6BE00D1A886 /* SettingsDetailView.swift in Sources */,
+				2EDA66BA26F836760082F8A9 /* AppliancesType.swift in Sources */,
+				2E6A8EAC26FED52F00A55BCA /* PrivacyPolicyView.swift in Sources */,
+				2EE7C19526F5CF0700D1A886 /* sRemoAPIClient.swift in Sources */,
+				2E51FA1F26EF7B0000079CFA /* HomeTabView.swift in Sources */,
+				2E51FA7526EF80D900079CFA /* SettingsViewModel.swift in Sources */,
+				2E51FA5B26EF7EE300079CFA /* DVDModel.swift in Sources */,
+				2E51FA1D26EF7B0000079CFA /* CelemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA2526EF7B0200079CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E51FA2E26EF7B0200079CFA /* sRemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E51FA2F26EF7B0200079CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E51FA3826EF7B0200079CFA /* CelemeUITests.swift in Sources */,
+				2E51FA3A26EF7B0200079CFA /* CelemeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E51FA2B26EF7B0200079CFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E51FA1826EF7B0000079CFA /* Celemo */;
+			targetProxy = 2E51FA2A26EF7B0200079CFA /* PBXContainerItemProxy */;
+		};
+		2E51FA3526EF7B0200079CFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E51FA1826EF7B0000079CFA /* Celemo */;
+			targetProxy = 2E51FA3426EF7B0200079CFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2E51FA3B26EF7B0200079CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E51FA3C26EF7B0200079CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E51FA3E26EF7B0200079CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Celemo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.Celemo;
+				PRODUCT_NAME = Celemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E51FA3F26EF7B0200079CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Celemo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.Celemo;
+				PRODUCT_NAME = Celemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E51FA4126EF7B0200079CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.CelemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Celemo.app/Celemo";
+			};
+			name = Debug;
+		};
+		2E51FA4226EF7B0200079CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.CelemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Celemo.app/Celemo";
+			};
+			name = Release;
+		};
+		2E51FA4426EF7B0200079CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.CelemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Celemo;
+			};
+			name = Debug;
+		};
+		2E51FA4526EF7B0200079CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zunda.CelemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Celemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E51FA1426EF7B0000079CFA /* Build configuration list for PBXProject "Celemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E51FA3B26EF7B0200079CFA /* Debug */,
+				2E51FA3C26EF7B0200079CFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E51FA3D26EF7B0200079CFA /* Build configuration list for PBXNativeTarget "Celemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E51FA3E26EF7B0200079CFA /* Debug */,
+				2E51FA3F26EF7B0200079CFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E51FA4026EF7B0200079CFA /* Build configuration list for PBXNativeTarget "CelemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E51FA4126EF7B0200079CFA /* Debug */,
+				2E51FA4226EF7B0200079CFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E51FA4326EF7B0200079CFA /* Build configuration list for PBXNativeTarget "CelemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E51FA4426EF7B0200079CFA /* Debug */,
+				2E51FA4526EF7B0200079CFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E51FA1126EF7B0000079CFA /* Project object */;
+}
