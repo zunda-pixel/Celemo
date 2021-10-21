@@ -30,19 +30,19 @@ class SettingsViewModel: ObservableObject {
     public func isValidDevice(_ deviceModel: DeviceModel) -> Bool {
         if deviceModel.name == "" {
             self.errorMessage = "デバイス名が空です。"
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             return false
         }
         
         if deviceModel.deviceID == "" {
             self.errorMessage = "デバイスIDが空です。"
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             return false
         }
         
         if deviceModel.apiKey == "" {
             self.errorMessage = "APIキーが空です。"
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             return false
         }
 
@@ -50,7 +50,7 @@ class SettingsViewModel: ObservableObject {
         
         if foundSameNameDevice {
             self.errorMessage = "同じデバイス名が既に存在します。"
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             return false
         }
         
@@ -64,19 +64,19 @@ class SettingsViewModel: ObservableObject {
     
     public func saveDevices() {
         do {
-            try UserDefaultWrapper.saveArrayOfData(key: "devicesData", self.settingsModel.devices)
+            try UserDefaults.saveArrayOfData(key: .DevicesData, self.settingsModel.devices)
         } catch {
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             self.errorMessage = "保存に失敗しました。"
         }
     }
     
     public func loadDevices() {
         do {
-            let devices: [DeviceModel] = try UserDefaultWrapper.loadArrayOfData(key: "devicesData")
+            let devices: [DeviceModel] = try UserDefaults.loadArrayOfData(key: .DevicesData)
             settingsModel.devices = devices
         } catch {
-            self.happenedError.toggle()
+            //self.happenedError.toggle()
             self.errorMessage = "保存データのロードに問題がありました。"
         }
     }

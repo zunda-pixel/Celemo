@@ -15,8 +15,12 @@ class AddingAppliancesViewModel: ObservableObject {
     }
     
     func loadDevices() {
-        if let devices : [DeviceModel] = try? UserDefaultWrapper.loadArrayOfData(key: "devicesData") {
+        do {
+            let devices: [DeviceModel] = try UserDefaults.loadArrayOfData(key: .DevicesData)
             self.devices.append(contentsOf: devices)
+        }
+        catch let error {
+            print(error.localizedDescription)
         }
     }
 }

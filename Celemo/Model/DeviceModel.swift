@@ -16,7 +16,7 @@ class DeviceModel: NSObject, Identifiable, NSSecureCoding {
     static var supportsSecureCoding: Bool = true
 
     init(name: String, deviceID: String, apiKey: String) {
-        self.id = "\(UUID())"
+        self.id = UUID().uuidString
         self.name = name
         self.deviceID = deviceID
         self.apiKey = apiKey

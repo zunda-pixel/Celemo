@@ -13,10 +13,14 @@ protocol AddingAppliancesDelegate {
 
 struct AddingAppliancesView: View {
     @Environment(\.presentationMode) var presentationMode
+    
     @StateObject var viewModel = AddingAppliancesViewModel()
+    
     @State var selectedDeviceIndex: Int = 0
     @State var selectedAppliancesType: AppliancesTypes = AppliancesTypes.TV
     @State var appliancesNumber: Int = 0
+    @State var happenedError: Bool = false
+    @State var errorMessage: String = .init()
     
     let delegate: AddingAppliancesDelegate
     
@@ -57,13 +61,28 @@ struct AddingAppliancesView: View {
             }
             
             Button(action: {
-                let device = self.viewModel.devices[selectedDeviceIndex]
+                if (self.selectedDeviceIndex < 0 || self.viewModel.devices.count <= selectedDeviceIndex) {
+                    self.errorMessage = "デバイスが選択されていません"
+                    self.happenedError.toggle()
+                    return
+                }
+                
+                let device = self.viewModel.devices[self.selectedDeviceIndex]
+
                 let newAppliancesModel = AppliancesModel(id: device.id, number: appliancesNumber, type: selectedAppliancesType)
+            
                 self.delegate.addAppliances(newAppliancesModel)
                 self.presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("追加")
             })
+        }
+        .alert("エラー", isPresented: $happenedError) {
+            Button("OK") {
+                // TODO デバイス設定画面に飛ぶようにする
+            }
+        } message: {
+            Text( self.errorMessage)
         }
     }
 }

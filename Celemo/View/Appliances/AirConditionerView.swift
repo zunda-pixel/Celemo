@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+enum AirConditionerRestriction: Double {
+    case Min = 16
+    case Max = 31
+}
+
 struct AirConditionerSignal {
     static let Power = [
-        "電源オン" : "n",
-        "電源オフ" : "f"
+        "オン" : "n",
+        "オフ" : "f"
     ]
     
     static let Mode = [
@@ -105,14 +110,15 @@ struct AirConditionerView: View {
             }, header: {
                 Text("風向き")
             })
-
-            Section(content: {
-                TextField("温度", value: $viewModel.selectedTemperature, formatter: NumberFormatter())
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.numberPad)
-            }, header: {
-                Text("温度")
-            })
+            
+            ZStack {
+                Text("\(self.viewModel.temperature)")
+                
+                let minimum = AirConditionerRestriction.Min.rawValue
+                let maximum = AirConditionerRestriction.Max.rawValue
+                CircleSlider(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
+            }
+            .padding(.vertical, 30)
             
             Button(action: {
                 Task {
@@ -122,6 +128,7 @@ struct AirConditionerView: View {
                 Text("送信")
             })
         }
+        .padding(.horizontal, 30)
         .listStyle(InsetListStyle())
         .onAppear(perform: {
             self.viewModel.device = self.device

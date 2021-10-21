@@ -21,27 +21,27 @@ class HomeViewModel: ObservableObject {
 
     func loadDevices() {
         do {
-            self.deviceModels = try UserDefaultWrapper.loadArrayOfData(key: "devicesData")
+            self.deviceModels = try UserDefaults.loadArrayOfData(key: .DevicesData)
         } catch let error {
-            happenedError.toggle()
+            // happenedError.toggle()
             print(error)
         }
     }
 
     func loadAppliances() {
         do {
-            self.appliancesModels = try UserDefaultWrapper.loadArrayOfData(key: "appliancesModelsData")
+            self.appliancesModels = try UserDefaults.loadArrayOfData(key: .AppliancesData)
         } catch let error {
-            happenedError.toggle()
+            // happenedError.toggle()
             print(error)
         }
     }
 
     func saveAppliances() {
         do {
-            try UserDefaultWrapper.saveArrayOfData(key: "appliancesModelsData", self.appliancesModels)
+            try UserDefaults.saveArrayOfData(key: .AppliancesData, self.appliancesModels)
         } catch let error {
-            happenedError.toggle()
+            // happenedError.toggle()
             print(error)
         }
     }
