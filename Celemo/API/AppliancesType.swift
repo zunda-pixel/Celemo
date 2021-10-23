@@ -14,3 +14,8 @@ enum AppliancesTypes: String, CaseIterable {
     case Switch = "スイッチ"
     case AirConditioner = "エアコン"
 }
+
+enum AirConditionerRestriction: Double {
+    case Min = 16
+    case Max = 31
+}

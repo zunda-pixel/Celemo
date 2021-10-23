@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-enum AirConditionerRestriction: Double {
-    case Min = 16
-    case Max = 31
-}
-
-
-
-
 struct AirConditionerView: View {
     @StateObject var viewModel: AirConditionerViewModel = AirConditionerViewModel()
     
