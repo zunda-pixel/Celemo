@@ -23,10 +23,10 @@ class AirConditionerViewModel: ObservableObject {
     }
     
     public func sendSignal() async {
-        guard let powerValue = AirConditionerSignal.Power[selectedPowerKey],
-              let modeValue = AirConditionerSignal.Mode[selectedModeKey],
-              let airFlowAmountValue = AirConditionerSignal.AirFlowAmount[selectedAirFlowAmountKey],
-              let airFlowDirectionValue = AirConditionerSignal.AirFlowDirection[selectedAirFlowDirectionKey],
+        guard let powerValue = Signal.AirConditioner.Power[selectedPowerKey],
+              let modeValue = Signal.AirConditioner.Mode[selectedModeKey],
+              let airFlowAmountValue = Signal.AirConditioner.AirFlowAmount[selectedAirFlowAmountKey],
+              let airFlowDirectionValue = Signal.AirConditioner.AirFlowDirection[selectedAirFlowDirectionKey],
               let appliancesNumber = appliancesNumber else {
             return
         }

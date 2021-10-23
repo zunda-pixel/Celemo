@@ -12,37 +12,7 @@ enum AirConditionerRestriction: Double {
     case Max = 31
 }
 
-struct AirConditionerSignal {
-    static let Power = [
-        "オン" : "n",
-        "オフ" : "f"
-    ]
-    
-    static let Mode = [
-        "自動" : 1,
-        "冷房" : 2,
-        "暖房" : 3,
-        "ドライ" : 4,
-        "送風" : 5,
-    ]
 
-    static let AirFlowAmount = [
-        "自動" : 1,
-        "強さ1" : 2,
-        "強さ2" : 3,
-        "強さ3" : 4,
-        "強さ4" : 5,
-        "強さ5" : 6,
-        "静か" : 7,
-    ]
-
-    static let AirFlowDirection = [
-        "停止" : 1,
-        "上下" : 2,
-        "左右" : 3,
-        "両方" : 4,
-    ]
-}
 
 
 struct AirConditionerView: View {
@@ -60,7 +30,7 @@ struct AirConditionerView: View {
         VStack {
             Section(content: {
                 Picker(selection: $viewModel.selectedPowerKey, label: Text("電源を選択")) {
-                    ForEach([String](AirConditionerSignal.Power.keys), id: \String.hashValue) { key in
+                    ForEach([String](Signal.AirConditioner.Power.keys), id: \String.hashValue) { key in
                         Text(String(describing: key))
                             .tag(key)
                     }
@@ -72,7 +42,7 @@ struct AirConditionerView: View {
             
             
             Section (content: {
-                let keys = AirConditionerSignal.Mode.map{$0.key}
+                let keys = Signal.AirConditioner.Mode.map{$0.key}
                 Picker(selection: $viewModel.selectedModeKey, label: Text("モードを選択")) {
                     ForEach(keys.indices) { index in
                         Text(keys[index])
@@ -85,7 +55,7 @@ struct AirConditionerView: View {
             })
 
             Section(content: {
-                let keys = AirConditionerSignal.AirFlowAmount.map{$0.key}
+                let keys = Signal.AirConditioner.AirFlowAmount.map{$0.key}
                 Picker(selection: $viewModel.selectedAirFlowAmountKey, label: Text("風量を選択")) {
                     ForEach(keys.indices) { index in
                         Text(keys[index])
@@ -98,7 +68,7 @@ struct AirConditionerView: View {
             })
 
             Section(content: {
-                let keys = AirConditionerSignal.AirFlowDirection.map{$0.key}
+                let keys = Signal.AirConditioner.AirFlowDirection.map{$0.key}
                 
                 Picker(selection: $viewModel.selectedAirFlowDirectionKey, label: Text("風向きを選択")) {
                     ForEach(keys.indices) { index in
