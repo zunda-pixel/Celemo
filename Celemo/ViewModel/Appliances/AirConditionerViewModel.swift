@@ -9,7 +9,7 @@ import Foundation
 
 class AirConditionerViewModel: ObservableObject {
     @Published var bindingTemperature: Double = 25
-    @Published var selectedPowerKey: String = "電源オン"
+    @Published var selectedPowerKey: Bool = true
     @Published var selectedModeKey: String = "自動"
     @Published var selectedAirFlowAmountKey: String = "自動"
     @Published var selectedAirFlowDirectionKey: String = "両方"
@@ -24,12 +24,12 @@ class AirConditionerViewModel: ObservableObject {
     
     public func sendSignal() async {
         guard let powerValue = Signal.AirConditioner.Power[selectedPowerKey],
-              let modeValue = Signal.AirConditioner.Mode[selectedModeKey],
-              let airFlowAmountValue = Signal.AirConditioner.AirFlowAmount[selectedAirFlowAmountKey],
-              let airFlowDirectionValue = Signal.AirConditioner.AirFlowDirection[selectedAirFlowDirectionKey],
-              let appliancesNumber = appliancesNumber else {
-            return
-        }
+              let appliancesNumber = appliancesNumber,
+              let modeValue = Signal.AirConditioner.Mode.first(where: { $0.key == self.selectedModeKey})?.value,
+              let airFlowAmountValue = Signal.AirConditioner.AirFlowAmount.first(where: {$0.key == self.selectedAirFlowAmountKey})?.value,
+              let airFlowDirectionValue = Signal.AirConditioner.AirFlowDirection.first(where: {$0.key == self.selectedAirFlowDirectionKey})?.value else {
+          return
+      }
         
         let signal = "\(appliancesNumber)-a-\(powerValue)-\(modeValue)-\(airFlowAmountValue)-\(airFlowDirectionValue)-\(temperature)"
                 

@@ -10,11 +10,11 @@ import Foundation
 struct Signal {
     struct AirConditioner {
         static let Power = [
-            "オン" : "n",
-            "オフ" : "f"
+            true : "n",
+            false : "f"
         ]
         
-        static let Mode = [
+        static let Mode: KeyValuePairs = [
             "自動" : 1,
             "冷房" : 2,
             "暖房" : 3,
@@ -22,7 +22,7 @@ struct Signal {
             "送風" : 5,
         ]
 
-        static let AirFlowAmount = [
+        static let AirFlowAmount: KeyValuePairs = [
             "自動" : 1,
             "強さ1" : 2,
             "強さ2" : 3,
@@ -32,7 +32,7 @@ struct Signal {
             "静か" : 7,
         ]
 
-        static let AirFlowDirection = [
+        static let AirFlowDirection: KeyValuePairs = [
             "停止" : 1,
             "上下" : 2,
             "左右" : 3,
