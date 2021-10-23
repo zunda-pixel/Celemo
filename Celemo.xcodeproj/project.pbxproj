@@ -47,7 +47,7 @@
 		2EE7C19126F4C6BE00D1A886 /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */; };
 		2EE7C19526F5CF0700D1A886 /* sRemoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */; };
 		2EE7C19826F5DEF400D1A886 /* SettingsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */; };
-		2EE7F86D2721A215007B4F68 /* CircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7F86C2721A215007B4F68 /* CircleSlider.swift */; };
+		2EE7F86D2721A215007B4F68 /* CircleSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE7F86C2721A215007B4F68 /* CircleSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 		2EE7C19026F4C6BE00D1A886 /* SettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
 		2EE7C19426F5CF0700D1A886 /* sRemoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sRemoAPIClient.swift; sourceTree = "<group>"; };
 		2EE7C19726F5DEF400D1A886 /* SettingsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewModel.swift; sourceTree = "<group>"; };
-		2EE7F86C2721A215007B4F68 /* CircleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSlider.swift; sourceTree = "<group>"; };
+		2EE7F86C2721A215007B4F68 /* CircleSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,7 +330,7 @@
 		2EE7F86B2721A1FA007B4F68 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				2EE7F86C2721A215007B4F68 /* CircleSlider.swift */,
+				2EE7F86C2721A215007B4F68 /* CircleSliderView.swift */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 			files = (
 				2E51FA7326EF809E00079CFA /* SettingsView.swift in Sources */,
 				2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */,
-				2EE7F86D2721A215007B4F68 /* CircleSlider.swift in Sources */,
+				2EE7F86D2721A215007B4F68 /* CircleSliderView.swift in Sources */,
 				2E51FA4B26EF7DEB00079CFA /* TVView.swift in Sources */,
 				2E51FA6B26EF805F00079CFA /* SwitchViewModel.swift in Sources */,
 				2EDA66B826F836530082F8A9 /* AddingAppliancesView.swift in Sources */,

@@ -116,7 +116,7 @@ struct AirConditionerView: View {
                 
                 let minimum = AirConditionerRestriction.Min.rawValue
                 let maximum = AirConditionerRestriction.Max.rawValue
-                CircleSlider(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
+                CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
             }
             .padding(.vertical, 30)
             

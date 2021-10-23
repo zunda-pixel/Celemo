@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct CircleSlider: View {
+struct CircleSliderView: View {
     @Binding private var bindingValue: Double
     
     @State private var angle: Double = 0
