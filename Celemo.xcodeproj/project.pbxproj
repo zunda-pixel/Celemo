@@ -37,6 +37,7 @@
 		2E51FA7926EF842200079CFA /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7826EF842200079CFA /* DeviceModel.swift */; };
 		2E51FA7F26F2306600079CFA /* ExtenstionUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA7E26F2306600079CFA /* ExtenstionUserDefault.swift */; };
 		2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA8026F2331F00079CFA /* HTTPClient.swift */; };
+		2E54A5C52729A07A00E64CB6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2E54A5C42729A07A00E64CB6 /* Collections */; };
 		2E6A8EAC26FED52F00A55BCA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A8EAB26FED52F00A55BCA /* PrivacyPolicyView.swift */; };
 		2EDA66B826F836530082F8A9 /* AddingAppliancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B726F836530082F8A9 /* AddingAppliancesView.swift */; };
 		2EDA66BA26F836760082F8A9 /* AppliancesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B926F836760082F8A9 /* AppliancesType.swift */; };
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E54A5C52729A07A00E64CB6 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +353,9 @@
 			dependencies = (
 			);
 			name = Celemo;
+			packageProductDependencies = (
+				2E54A5C42729A07A00E64CB6 /* Collections */,
+			);
 			productName = sRemo;
 			productReference = 2E51FA1926EF7B0000079CFA /* Celemo.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +428,9 @@
 				Base,
 			);
 			mainGroup = 2E51FA1026EF7B0000079CFA;
+			packageReferences = (
+				2E54A5BD27299C4D00E64CB6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 2E51FA1A26EF7B0000079CFA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -849,6 +857,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E54A5BD27299C4D00E64CB6 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E54A5C42729A07A00E64CB6 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E54A5BD27299C4D00E64CB6 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E51FA1126EF7B0000079CFA /* Project object */;
 }

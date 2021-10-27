@@ -6,20 +6,18 @@
 //
 
 import Foundation
+import Collections
 
 class AirConditionerViewModel: ObservableObject {
     @Published var bindingTemperature: Double = 25
     @Published var selectedPowerKey: Bool = true
-    @Published var selectedModeKey: String = "自動"
-    @Published var selectedAirFlowAmountKey: String = "自動"
-    @Published var selectedAirFlowDirectionKey: String = "両方"
-    @Published var selectedWindStrength:Int = 1
-    @Published var selectedMode: Int = 1
-    @Published var selectedDirection: Int = 1
+    @Published var selectedWindStrength:Int = 0
+    @Published var selectedMode: Int = 0
+    @Published var selectedDirection: Int = 0
     
-    let mode: KeyValuePairs = [0: "auto", 1: "cold", 2: "hot", 3: "dry", 4: "ventilator"]
-    let windStrength: KeyValuePairs = [0: "auto", 1: "wind1", 2: "wind2", 3: "wind3", 4: "wind4", 5: "wind5", 6: "quiet"]
-    let direction: KeyValuePairs = [0: "停止", 1: "arrow.left.arrow.right", 2: "arrow.up.arrow.down", 3: "Both"]
+    let mode: OrderedSet = ["auto", "cold", "hot", "dry", "ventilator"]
+    let windStrength: OrderedSet = ["auto", "wind1", "wind2", "wind3", "wind4", "wind5", "quiet"]
+    let direction: OrderedSet = ["停止", "arrow.left.arrow.right", "arrow.up.arrow.down", "Both"]
     
     var device: DeviceModel? = nil
     
@@ -31,14 +29,11 @@ class AirConditionerViewModel: ObservableObject {
     
     public func sendSignal() async {
         guard let powerValue = Signal.AirConditioner.Power[selectedPowerKey],
-              let appliancesNumber = appliancesNumber,
-              let modeValue = Signal.AirConditioner.Mode.first(where: { $0.key == self.selectedModeKey})?.value,
-              let airFlowAmountValue = Signal.AirConditioner.AirFlowAmount.first(where: {$0.key == self.selectedAirFlowAmountKey})?.value,
-              let airFlowDirectionValue = Signal.AirConditioner.AirFlowDirection.first(where: {$0.key == self.selectedAirFlowDirectionKey})?.value else {
-          return
-      }
+              let appliancesNumber = appliancesNumber else {
+              return
+        }
         
-        let signal = "\(appliancesNumber)-a-\(powerValue)-\(modeValue)-\(airFlowAmountValue)-\(airFlowDirectionValue)-\(temperature)"
+        let signal = "\(appliancesNumber)-a-\(powerValue)-\(self.selectedMode + 1)-\(self.selectedWindStrength + 1)-\(self.selectedDirection)-\(temperature)"
                 
         guard let apiKey = device?.apiKey,
               let deviceID = device?.deviceID else {

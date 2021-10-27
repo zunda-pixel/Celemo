@@ -13,31 +13,6 @@ struct Signal {
             true : "n",
             false : "f"
         ]
-        
-        static let Mode: KeyValuePairs = [
-            "自動" : 1,
-            "冷房" : 2,
-            "暖房" : 3,
-            "ドライ" : 4,
-            "送風" : 5,
-        ]
-
-        static let AirFlowAmount: KeyValuePairs = [
-            "自動" : 1,
-            "強さ1" : 2,
-            "強さ2" : 3,
-            "強さ3" : 4,
-            "強さ4" : 5,
-            "強さ5" : 6,
-            "静か" : 7,
-        ]
-
-        static let AirFlowDirection: KeyValuePairs = [
-            "停止" : 1,
-            "上下" : 2,
-            "左右" : 3,
-            "両方" : 4,
-        ]
     }
     
     enum TV: Int {
