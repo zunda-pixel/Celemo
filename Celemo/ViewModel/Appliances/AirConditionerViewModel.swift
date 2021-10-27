@@ -13,6 +13,13 @@ class AirConditionerViewModel: ObservableObject {
     @Published var selectedModeKey: String = "自動"
     @Published var selectedAirFlowAmountKey: String = "自動"
     @Published var selectedAirFlowDirectionKey: String = "両方"
+    @Published var selectedWindStrength:Int = 1
+    @Published var selectedMode: Int = 1
+    @Published var selectedDirection: Int = 1
+    
+    let mode: KeyValuePairs = [0: "auto", 1: "cold", 2: "hot", 3: "dry", 4: "ventilator"]
+    let windStrength: KeyValuePairs = [0: "auto", 1: "wind1", 2: "wind2", 3: "wind3", 4: "wind4", 5: "wind5", 6: "quiet"]
+    let direction: KeyValuePairs = [0: "停止", 1: "arrow.left.arrow.right", 2: "arrow.up.arrow.down", 3: "Both"]
     
     var device: DeviceModel? = nil
     

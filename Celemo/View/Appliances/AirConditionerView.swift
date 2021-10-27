@@ -7,9 +7,41 @@
 
 import SwiftUI
 
+struct CircleButtonView: View {
+    let name: String
+    @State var overlayText: String = ""
+    
+    var body: some View {
+        Image(self.name)
+            .resizable()
+            .padding(8)
+            .frame(width: 60, height: 60)
+            .imageScale(.large)
+            .background(.white)
+            .foregroundColor(.blue)
+            .clipShape(Circle())
+            .shadow(color: .black.opacity(0.5), radius: 10)
+            .overlay(
+                Text(self.overlayText)
+            )
+            .onChange(of: self.name, perform: { newValue in
+                if(newValue == "auto") {
+                    self.overlayText = "Auto"
+                }
+                else if (newValue == "quiet") {
+                    self.overlayText = "静か"
+                }
+                else {
+                    self.overlayText = ""
+                }
+            })
+    }
+    
+}
+
 struct AirConditionerView: View {
     @StateObject var viewModel: AirConditionerViewModel = AirConditionerViewModel()
-    
+
     let device: DeviceModel
     let appliancesNumber: Int
     
@@ -20,19 +52,73 @@ struct AirConditionerView: View {
     
     var body: some View {
         VStack {
-            Section(content: {
-                Picker(selection: $viewModel.selectedPowerKey, label: Text("電源を選択")) {
-                    ForEach([String](Signal.AirConditioner.Power.keys), id: \String.hashValue) { key in
-                        Text(String(describing: key))
-                            .tag(key)
+            Toggle("", isOn: self.$viewModel.selectedPowerKey)
+            
+            ZStack {
+                
+                let minimum = AirConditionerRestriction.Min.rawValue
+                let maximum = AirConditionerRestriction.Max.rawValue
+                CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
+                Text("\(self.viewModel.temperature)°")
+                    .font(.system(size: 60, weight: .medium, design: .default))
+
+            }
+            
+            HStack {
+                // モード
+                Button(action: {
+                    self.viewModel.selectedMode += 1
+                    
+                    if (self.viewModel.selectedMode >= self.viewModel.mode.count) {
+                        self.viewModel.selectedMode = 0
                     }
-                }
-                .pickerStyle(.segmented)
-            }, header: {
-                Text("電源")
-            })
+                }, label: {
+                    VStack {
+                        let value = self.viewModel.mode[self.viewModel.selectedMode].value
+                        CircleButtonView(name: value)
+                        Text(value)
+                    }
+                })
+                Spacer()
+                // 風量
+                Button(action: {
+                    self.viewModel.selectedWindStrength += 1
+                    
+                    if (self.viewModel.selectedWindStrength >= self.viewModel.windStrength.count) {
+                        self.viewModel.selectedWindStrength = 0
+                    }
+                }, label: {
+                    VStack {
+                        let value = self.viewModel.windStrength[self.viewModel.selectedWindStrength].value
+                        CircleButtonView(name: value)
+                        Text(value)
+                    }
+                })
+                Spacer()
+                // 風向き
+                Button(action: {
+                    self.viewModel.selectedDirection += 1
+                    
+                    if self.viewModel.selectedDirection >= self.viewModel.direction.count {
+                        self.viewModel.selectedDirection = 0
+                    }
+                }, label: {
+                    VStack {
+                        Image(systemName: self.viewModel.direction[self.viewModel.selectedDirection].value)
+                            .resizable()
+                            .padding(15)
+                            .frame(width: 60, height: 60)
+                            .imageScale(.large)
+                            .background(.white)
+                            .foregroundColor(.black)
+                            .clipShape(Circle())
+                            .shadow(color: .black.opacity(0.5), radius: 10)
+                        Text(self.viewModel.direction[self.viewModel.selectedDirection].value)
+                    }
+                })
+            }
             
-            
+            Spacer()
             Section (content: {
                 let keys = Signal.AirConditioner.Mode.map{$0.key}
                 Picker(selection: $viewModel.selectedModeKey, label: Text("モードを選択")) {
@@ -73,15 +159,7 @@ struct AirConditionerView: View {
                 Text("風向き")
             })
             
-            ZStack {
-                Text("\(self.viewModel.temperature)")
-                
-                let minimum = AirConditionerRestriction.Min.rawValue
-                let maximum = AirConditionerRestriction.Max.rawValue
-                CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
-            }
-            .padding(.vertical, 30)
-            
+
             Button(action: {
                 Task {
                     await viewModel.sendSignal()
@@ -91,7 +169,7 @@ struct AirConditionerView: View {
             })
         }
         .padding(.horizontal, 30)
-        .listStyle(InsetListStyle())
+        .listStyle(.inset)
         .onAppear(perform: {
             self.viewModel.device = self.device
             self.viewModel.appliancesNumber = self.appliancesNumber
