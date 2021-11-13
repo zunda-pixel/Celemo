@@ -9,7 +9,7 @@ import Foundation
 
 struct SettingsModel {
     var name: String
-    var deviceID: String
+    var id: String
     var apiKey: String
     
     var devices : [DeviceModel] = []

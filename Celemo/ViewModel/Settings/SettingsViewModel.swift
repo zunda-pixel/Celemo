@@ -8,13 +8,13 @@
 import Foundation
 
 class SettingsViewModel: ObservableObject {
-    @Published var settingsModel: SettingsModel = SettingsModel(name: "", deviceID: "", apiKey: "")
+    @Published var settingsModel: SettingsModel = SettingsModel(name: "", id: "", apiKey: "")
     @Published var happenedError : Bool = false
     
     var errorMessage = ""
     
     public func registerDevice() {
-        let newDevice = DeviceModel(name: settingsModel.name, deviceID: settingsModel.deviceID, apiKey: settingsModel.apiKey)
+        let newDevice = DeviceModel(name: settingsModel.name, deviceID: settingsModel.id, apiKey: settingsModel.apiKey)
         
         let isValid = self.isValidDevice(newDevice)
         
@@ -83,7 +83,7 @@ class SettingsViewModel: ObservableObject {
     
     private func clearRegistrationData() {
         self.settingsModel.name = ""
-        self.settingsModel.deviceID = ""
+        self.settingsModel.id = ""
         self.settingsModel.apiKey = ""
     }
 }
