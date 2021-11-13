@@ -14,10 +14,11 @@ extension UserDefaults {
         case NotFoundKey
         
         var localizedDescription: String {
+            let title = "設定ファイルの読み書き時に失敗しました"
             switch self {
-                case .SaveError: return "保存に失敗しました"
-                case .LoadError: return "読み込みに失敗しました"
-                case .NotFoundKey: return "キーが見つかりませんでした"
+                case .SaveError: return "\(title)\n保存に失敗しました"
+                case .LoadError: return "\(title)\n読み込みに失敗しました"
+                case .NotFoundKey: return "\(title)\nキーが見つかりませんでした"
             }
         }
     }
@@ -27,37 +28,31 @@ extension UserDefaults {
         case AppliancesData
     }
     
-    public static func saveData<DecodeObject>(key: UserDefaults.Keys, _ deviceModels: DecodeObject) throws {
-        let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
-        UserDefaults.standard.setValue(archiveData, forKey: key.rawValue)
+    public static func saveData<DecodeObject>(key: UserDefaults.Keys, _ data: DecodeObject) throws where DecodeObject : Encodable {
+        let json = try JSONEncoder().encode(data)
+        UserDefaults.standard.set(json, forKey: key.rawValue)
     }
     
-    public static func saveArrayOfData<DecodeObject>(key: UserDefaults.Keys, _ deviceModels: [DecodeObject]) throws {
-        let archiveData = try NSKeyedArchiver.archivedData(withRootObject: deviceModels, requiringSecureCoding: true)
-        UserDefaults.standard.setValue(archiveData, forKey: key.rawValue)
+    public static func saveArrayOfData<DecodeObject>(key: UserDefaults.Keys, _ datas: [DecodeObject]) throws where DecodeObject : Encodable {
+        let json = try JSONEncoder().encode(datas)
+        UserDefaults.standard.set(json, forKey: key.rawValue)
     }
     
-    public static func loadData<DecodedObject>(key: UserDefaults.Keys) throws -> DecodedObject where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
-        guard let storedData = UserDefaults.standard.object(forKey: key.rawValue) as? Data else {
+    public static func loadData<DecodedObject>(key: UserDefaults.Keys) throws -> DecodedObject where DecodedObject : Decodable {
+        guard let storedData = UserDefaults.standard.data(forKey: key.rawValue) else {
             throw UserDefaultsError.NotFoundKey
         }
         
-        if let data = try NSKeyedUnarchiver.unarchivedObject(ofClass: DecodedObject.self, from: storedData) {
-            return data
-        } else {
-            throw UserDefaultsError.LoadError
-        }
+        return try JSONDecoder().decode(DecodedObject.self, from: storedData)
     }
     
-    public static func loadArrayOfData<DecodedObject>(key: UserDefaults.Keys) throws -> [DecodedObject] where DecodedObject : NSObject, DecodedObject : NSSecureCoding {
-        guard let storedData = UserDefaults.standard.object(forKey: key.rawValue) as? Data else {
+    public static func loadArrayOfData<DecodedObject>(key: UserDefaults.Keys) throws -> [DecodedObject] where DecodedObject : Decodable {
+        guard let storedData = UserDefaults.standard.data(forKey: key.rawValue) else {
             throw UserDefaultsError.NotFoundKey
         }
         
-        if let datas = try NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: DecodedObject.self, from: storedData) {
-            return datas
-        } else {
-            throw UserDefaultsError.LoadError
-        }
+        let datas = try JSONDecoder().decode([DecodedObject].self, from: storedData)
+            
+        return datas
     }
 }

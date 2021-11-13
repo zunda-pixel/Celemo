@@ -12,17 +12,17 @@ struct HomeView: View {
     
     @ViewBuilder
     func makeAppliancesView(device: DeviceModel, appliancesModel: AppliancesModel) -> some View {
-        switch appliancesModel.appliancesType {
+        switch appliancesModel.type {
             case .TV:
-                TVView(device: device, appliancesNumber: appliancesModel.deviceNumber)
+                TVView(device: device, appliancesNumber: appliancesModel.number)
             case .DVD:
-                DVDView(device: device, appliancesNumber: appliancesModel.deviceNumber)
+                DVDView(device: device, appliancesNumber: appliancesModel.number)
             case .Switch:
-                SwitchView(device: device, appliancesNumber: appliancesModel.deviceNumber)
+                SwitchView(device: device, appliancesNumber: appliancesModel.number)
             case .AirConditioner:
-                AirConditionerView(device: device, appliancesNumber: appliancesModel.deviceNumber)
+                AirConditionerView(device: device, appliancesNumber: appliancesModel.number)
             case .Light:
-                LightView(device: device, appliancesNumber: appliancesModel.deviceNumber)
+                LightView(device: device, appliancesNumber: appliancesModel.number)
         }
     }
     
@@ -37,14 +37,14 @@ struct HomeView: View {
                     AddingAppliancesView(delegate: self)
                 }
             ForEach(self.viewModel.appliancesModels) { appliancesModel in
-                if let device: DeviceModel = self.viewModel.deviceModels.first(where: { return $0.id == appliancesModel.deviceID }) {
+                if let device: DeviceModel = self.viewModel.deviceModels.first(where: { return $0.id == appliancesModel.id }) {
                     Button(action: {
                         self.viewModel.isPresentedDetailAppliances.toggle()
                     }, label: {
                         HStack {
                             Text("\(device.name)")
                             Spacer()
-                            Text("\(appliancesModel.appliancesType.rawValue)(\(appliancesModel.deviceNumber))")
+                            Text("\(appliancesModel.type.rawValue)(\(appliancesModel.number))")
                         }
                     })
                         .sheet(isPresented: $viewModel.isPresentedDetailAppliances) {
