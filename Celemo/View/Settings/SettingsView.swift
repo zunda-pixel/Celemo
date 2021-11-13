@@ -31,7 +31,7 @@ struct SettingsView: View {
                         Image(systemName: "questionmark.circle")
                     })
                 }){
-                    TextField("Device Identification", text: $settingsViewModel.settingsModel.deviceID)
+                    TextField("Device ID", text: $settingsViewModel.settingsModel.id)
             }
             
             Section (header:
