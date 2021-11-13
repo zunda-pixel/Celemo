@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppliancesTypes: String, CaseIterable {
+enum AppliancesTypes: String, Codable, CaseIterable {
     case Light  = "照明"
     case TV     = "テレビ"
     case DVD
