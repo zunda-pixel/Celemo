@@ -23,8 +23,6 @@ struct sRemoAPIClient {
     
     static func sendSignal(signal: String, apiKey: String, deviceID: String) async throws {
         let url = "\(baseURL)/\(deviceID)/send_sig"
-        print(url)
-        print(self.getQueries(signal))
         try await HTTPClient.post(url: url, headers: self.getHeaders(apiKey), queries: self.getQueries(signal))
     }
     
