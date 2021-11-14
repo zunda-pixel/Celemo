@@ -17,7 +17,7 @@ class AirConditionerViewModel: ObservableObject {
     
     let mode: OrderedSet = ["auto", "cold", "hot", "dry", "ventilator"]
     let windStrength: OrderedSet = ["auto", "wind1", "wind2", "wind3", "wind4", "wind5", "quiet"]
-    let direction: OrderedSet = ["停止", "arrow.left.arrow.right", "arrow.up.arrow.down", "Both"]
+    let direction: OrderedSet = ["stop", "arrow.left.arrow.right", "arrow.up.arrow.down", "both"]
     
     var device: DeviceModel? = nil
     
@@ -34,7 +34,7 @@ class AirConditionerViewModel: ObservableObject {
         }
         
         let signal = "\(appliancesNumber)-a-\(powerValue)-\(self.selectedMode + 1)-\(self.selectedWindStrength + 1)-\(self.selectedDirection)-\(temperature)"
-                
+
         guard let apiKey = device?.apiKey,
               let deviceID = device?.deviceID else {
             return

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CircleButtonView: View {
     let name: String
-    @State var overlayText: String = ""
     
     var body: some View {
         Image(self.name)
@@ -17,24 +16,10 @@ struct CircleButtonView: View {
             .padding(8)
             .frame(width: 60, height: 60)
             .imageScale(.large)
-            .background(.white)
+            .background(.red)
             .foregroundColor(.blue)
             .clipShape(Circle())
             .shadow(color: .black.opacity(0.5), radius: 10)
-            .overlay(
-                Text(self.overlayText)
-            )
-            .onChange(of: self.name, perform: { newValue in
-                if(newValue == "auto") {
-                    self.overlayText = "Auto"
-                }
-                else if (newValue == "quiet") {
-                    self.overlayText = "静か"
-                }
-                else {
-                    self.overlayText = ""
-                }
-            })
     }
     
 }
@@ -52,17 +37,12 @@ struct AirConditionerView: View {
     
     var body: some View {
         VStack {
+            
+            Spacer()
+            
             Toggle("", isOn: self.$viewModel.selectedPowerKey)
             
-            ZStack {
-                
-                let minimum = AirConditionerRestriction.Min.rawValue
-                let maximum = AirConditionerRestriction.Max.rawValue
-                CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
-                Text("\(self.viewModel.temperature)°")
-                    .font(.system(size: 60, weight: .medium, design: .default))
 
-            }
             
             HStack {
                 // モード
@@ -102,17 +82,23 @@ struct AirConditionerView: View {
                     }
                 }, label: {
                     VStack {
-                        Image(systemName: self.viewModel.direction[self.viewModel.selectedDirection])
-                            .resizable()
-                            .padding(15)
-                            .frame(width: 60, height: 60)
-                            .imageScale(.large)
-                            .background(.white)
-                            .foregroundColor(.black)
-                            .clipShape(Circle())
-                            .shadow(color: .black.opacity(0.5), radius: 10)
+                        let value = self.viewModel.direction[self.viewModel.selectedDirection]
+                        CircleButtonView(name: value)
+
                     }
                 })
+            }
+            
+            Spacer(minLength: 30)
+            
+            ZStack {
+                
+                let minimum = AirConditionerRestriction.Min.rawValue
+                let maximum = AirConditionerRestriction.Max.rawValue
+                CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
+                Text("\(self.viewModel.temperature)°")
+                    .font(.system(size: 60, weight: .medium, design: .default))
+
             }
             
             Spacer()
@@ -124,6 +110,8 @@ struct AirConditionerView: View {
             }, label: {
                 Text("送信")
             })
+            
+            Spacer()
         }
         .padding(.horizontal, 30)
         .listStyle(.inset)
