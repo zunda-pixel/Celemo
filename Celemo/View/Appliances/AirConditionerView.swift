@@ -7,9 +7,26 @@
 
 import SwiftUI
 
+struct CircleButtonView: View {
+    let name: String
+    
+    var body: some View {
+        Image(self.name)
+            .resizable()
+            .padding(8)
+            .frame(width: 60, height: 60)
+            .imageScale(.large)
+            .background(.red)
+            .foregroundColor(.blue)
+            .clipShape(Circle())
+            .shadow(color: .black.opacity(0.5), radius: 10)
+    }
+    
+}
+
 struct AirConditionerView: View {
     @StateObject var viewModel: AirConditionerViewModel = AirConditionerViewModel()
-    
+
     let device: DeviceModel
     let appliancesNumber: Int
     
@@ -20,67 +37,71 @@ struct AirConditionerView: View {
     
     var body: some View {
         VStack {
-            Section(content: {
-                Picker(selection: $viewModel.selectedPowerKey, label: Text("電源を選択")) {
-                    ForEach([String](Signal.AirConditioner.Power.keys), id: \String.hashValue) { key in
-                        Text(String(describing: key))
-                            .tag(key)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }, header: {
-                Text("電源")
-            })
             
+            Spacer()
             
-            Section (content: {
-                let keys = Signal.AirConditioner.Mode.map{$0.key}
-                Picker(selection: $viewModel.selectedModeKey, label: Text("モードを選択")) {
-                    ForEach(keys.indices) { index in
-                        Text(keys[index])
-                            .tag(keys[index])
-                    }
-                }
-                .pickerStyle(.segmented)
-            }, header: {
-                Text("モード")
-            })
+            Toggle("", isOn: self.$viewModel.selectedPowerKey)
+            
 
-            Section(content: {
-                let keys = Signal.AirConditioner.AirFlowAmount.map{$0.key}
-                Picker(selection: $viewModel.selectedAirFlowAmountKey, label: Text("風量を選択")) {
-                    ForEach(keys.indices) { index in
-                        Text(keys[index])
-                            .tag(keys[index])
+            
+            HStack {
+                // モード
+                Button(action: {
+                    self.viewModel.selectedMode += 1
+                    
+                    if (self.viewModel.selectedMode >= self.viewModel.mode.count) {
+                        self.viewModel.selectedMode = 0
                     }
-                }
-                .pickerStyle(.segmented)
-            }, header: {
-                Text("風量")
-            })
+                }, label: {
+                    VStack {
+                        let value = self.viewModel.mode[self.viewModel.selectedMode]
+                        CircleButtonView(name: value)
+                    }
+                })
+                Spacer()
+                // 風量
+                Button(action: {
+                    self.viewModel.selectedWindStrength += 1
+                    
+                    if (self.viewModel.selectedWindStrength >= self.viewModel.windStrength.count) {
+                        self.viewModel.selectedWindStrength = 0
+                    }
+                }, label: {
+                    VStack {
+                        let value = self.viewModel.windStrength[self.viewModel.selectedWindStrength]
+                        CircleButtonView(name: value)
+                    }
+                })
+                Spacer()
+                // 風向き
+                Button(action: {
+                    self.viewModel.selectedDirection += 1
+                    
+                    if self.viewModel.selectedDirection >= self.viewModel.direction.count {
+                        self.viewModel.selectedDirection = 0
+                    }
+                }, label: {
+                    VStack {
+                        let value = self.viewModel.direction[self.viewModel.selectedDirection]
+                        CircleButtonView(name: value)
 
-            Section(content: {
-                let keys = Signal.AirConditioner.AirFlowDirection.map{$0.key}
-                
-                Picker(selection: $viewModel.selectedAirFlowDirectionKey, label: Text("風向きを選択")) {
-                    ForEach(keys.indices) { index in
-                        Text(keys[index])
-                            .tag(keys[index])
                     }
-                }
-                .pickerStyle(.segmented)
-            }, header: {
-                Text("風向き")
-            })
+                })
+            }
+            
+            Spacer(minLength: 30)
             
             ZStack {
-                Text("\(self.viewModel.temperature)")
                 
                 let minimum = AirConditionerRestriction.Min.rawValue
                 let maximum = AirConditionerRestriction.Max.rawValue
                 CircleSliderView(self.$viewModel.bindingTemperature,beginAngle: 0.1, endAngle: 0.9, minimumValue: minimum, maximumValue: maximum)
+                Text("\(self.viewModel.temperature)°")
+                    .font(.system(size: 60, weight: .medium, design: .default))
+
             }
-            .padding(.vertical, 30)
+            
+            Spacer()
             
             Button(action: {
                 Task {
@@ -89,9 +110,11 @@ struct AirConditionerView: View {
             }, label: {
                 Text("送信")
             })
+            
+            Spacer()
         }
         .padding(.horizontal, 30)
-        .listStyle(InsetListStyle())
+        .listStyle(.inset)
         .onAppear(perform: {
             self.viewModel.device = self.device
             self.viewModel.appliancesNumber = self.appliancesNumber

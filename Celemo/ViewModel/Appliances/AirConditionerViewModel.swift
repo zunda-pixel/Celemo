@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import Collections
 
 class AirConditionerViewModel: ObservableObject {
     @Published var bindingTemperature: Double = 25
-    @Published var selectedPowerKey: String = "電源オン"
-    @Published var selectedModeKey: String = "自動"
-    @Published var selectedAirFlowAmountKey: String = "自動"
-    @Published var selectedAirFlowDirectionKey: String = "両方"
+    @Published var selectedPowerKey: Bool = true
+    @Published var selectedWindStrength:Int = 0
+    @Published var selectedMode: Int = 0
+    @Published var selectedDirection: Int = 0
+    
+    let mode: OrderedSet = ["auto", "cold", "hot", "dry", "ventilator"]
+    let windStrength: OrderedSet = ["auto", "wind1", "wind2", "wind3", "wind4", "wind5", "quiet"]
+    let direction: OrderedSet = ["stop", "arrow.left.arrow.right", "arrow.up.arrow.down", "both"]
     
     var device: DeviceModel? = nil
     
@@ -24,15 +29,12 @@ class AirConditionerViewModel: ObservableObject {
     
     public func sendSignal() async {
         guard let powerValue = Signal.AirConditioner.Power[selectedPowerKey],
-              let modeValue = Signal.AirConditioner.Mode[selectedModeKey],
-              let airFlowAmountValue = Signal.AirConditioner.AirFlowAmount[selectedAirFlowAmountKey],
-              let airFlowDirectionValue = Signal.AirConditioner.AirFlowDirection[selectedAirFlowDirectionKey],
               let appliancesNumber = appliancesNumber else {
-            return
+              return
         }
         
-        let signal = "\(appliancesNumber)-a-\(powerValue)-\(modeValue)-\(airFlowAmountValue)-\(airFlowDirectionValue)-\(temperature)"
-                
+        let signal = "\(appliancesNumber)-a-\(powerValue)-\(self.selectedMode + 1)-\(self.selectedWindStrength + 1)-\(self.selectedDirection)-\(temperature)"
+
         guard let apiKey = device?.apiKey,
               let deviceID = device?.deviceID else {
             return

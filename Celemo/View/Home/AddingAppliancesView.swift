@@ -89,7 +89,6 @@ struct AddingAppliancesView: View {
 
 struct AddingAppliancesView_Previews: PreviewProvider, AddingAppliancesDelegate {
     func addAppliances(_ appliancesModel: AppliancesModel) {
-        print("Hello")
     }
     
     static var previews: some View {
