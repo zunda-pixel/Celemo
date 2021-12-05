@@ -39,6 +39,7 @@
 		2E51FA8126F2331F00079CFA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E51FA8026F2331F00079CFA /* HTTPClient.swift */; };
 		2E54A5C52729A07A00E64CB6 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 2E54A5C42729A07A00E64CB6 /* Collections */; };
 		2E6A8EAC26FED52F00A55BCA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6A8EAB26FED52F00A55BCA /* PrivacyPolicyView.swift */; };
+		2E79BD14275CA456003CDDD8 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2E79BD13275CA456003CDDD8 /* KeychainAccess */; };
 		2EB59FB0274A1C0F00CCEEDB /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB59FAF274A1C0F00CCEEDB /* CreditModel.swift */; };
 		2EDA66B826F836530082F8A9 /* AddingAppliancesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B726F836530082F8A9 /* AddingAppliancesView.swift */; };
 		2EDA66BA26F836760082F8A9 /* AppliancesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA66B926F836760082F8A9 /* AppliancesType.swift */; };
@@ -123,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E79BD14275CA456003CDDD8 /* KeychainAccess in Frameworks */,
 				2E54A5C52729A07A00E64CB6 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +360,7 @@
 			name = Celemo;
 			packageProductDependencies = (
 				2E54A5C42729A07A00E64CB6 /* Collections */,
+				2E79BD13275CA456003CDDD8 /* KeychainAccess */,
 			);
 			productName = sRemo;
 			productReference = 2E51FA1926EF7B0000079CFA /* Celemo.app */;
@@ -433,6 +436,7 @@
 			mainGroup = 2E51FA1026EF7B0000079CFA;
 			packageReferences = (
 				2E54A5BD27299C4D00E64CB6 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				2E79BD12275CA456003CDDD8 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 2E51FA1A26EF7B0000079CFA /* Products */;
 			projectDirPath = "";
@@ -871,6 +875,14 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		2E79BD12275CA456003CDDD8 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -878,6 +890,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2E54A5BD27299C4D00E64CB6 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		2E79BD13275CA456003CDDD8 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E79BD12275CA456003CDDD8 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
